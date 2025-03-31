@@ -5,222 +5,200 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/soul_society_logo.png" type="image/x-icon">
   <title>Movie & TV Show Tracker</title>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/images/soul_society_logo.png" type="image/x-icon">
-    <title>Movie & TV Show Tracker</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-        background-color: #121212;
-        color: #e0e0e0;
-      }
-      h1 {
-        text-align: center;
-        margin-bottom: 20px;
-        color: #bb86fc; /* Purple accent color */
-      }
-      .controls {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .search {
-        padding: 8px;
-        width: 300px;
-        border-radius: 4px;
-        border: 1px solid #333;
-        background-color: #1e1e1e;
-        color: #e0e0e0;
-        margin-bottom: 10px;
-      }
-      .filter-group {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-bottom: 10px;
-      }
-      .btn {
-        padding: 8px 12px;
-        background-color: #bb86fc; /* Purple accent color */
-        color: #121212;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: bold;
-      }
-      .btn:hover {
-        background-color: #9d4edd;
-      }
-      .btn-secondary {
-        background-color: #03dac6; /* Teal accent color */
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-      th, td {
-        border: 1px solid #333;
-        padding: 8px;
-        text-align: left;
-      }
-      th {
-        background-color: #1f1f1f;
-        position: sticky;
-        top: 0;
-        cursor: pointer;
-        color: #bb86fc; /* Purple accent color */
-      }
-      th:hover {
-        background-color: #2d2d2d;
-      }
-      tr:nth-child(even) {
-        background-color: #1a1a1a;
-      }
-      tr:hover {
-        background-color: #2d2d2d;
-      }
-      .status-cell {
-        text-align: center;
-      }
-      .status-select, select, input[type="text"], input[type="number"] {
-        width: 100%;
-        padding: 5px;
-        background-color: #1e1e1e;
-        color: #e0e0e0;
-        border: 1px solid #333;
-        border-radius: 3px;
-      }
-      .progress-inputs {
-        display: flex;
-        gap: 5px;
-      }
-      .progress-inputs input {
-        width: 60px;
-        text-align: center;
-      }
-      .progress-inputs .separator {
-        display: flex;
-        align-items: center;
-        color: #888;
-      }
-      .save-container {
-        text-align: right;
-        margin-top: 20px;
-      }
-      .statistics {
-        margin-top: 20px;
-        padding: 15px;
-        background-color: #1e1e1e;
-        border-radius: 5px;
-        border: 1px solid #333;
-      }
-      .stats-title {
-        font-weight: bold;
-        margin-bottom: 10px;
-        color: #bb86fc; /* Purple accent color */
-      }
-      .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 10px;
-      }
-      .stat-item {
-        padding: 10px;
-        background-color: #262626;
-        border-radius: 4px;
-        border: 1px solid #333;
-      }
-      /* Status color indicators */
-      .watched-stat {
-        color: #03dac6; /* Teal accent for completed */
-      }
-      .watching-stat {
-        color: #bb86fc; /* Purple accent for in progress */
-      }
-      .plan-stat {
-        color: #3700b3; /* Dark purple for plan to watch */
-      }
-      .not-stat {
-        color: #888888; /* Gray for not started */
-      }
-      .dropped-stat {
-        color: #cf6679; /* Red-ish for dropped */
-      }
-      .category-selector {
-        display: flex;
-        gap: 15px;
-        margin-bottom: 20px;
-        justify-content: center;
-      }
-      .category-btn {
-        padding: 10px 20px;
-        border-radius: 5px;
-        background-color: #1e1e1e;
-        color: #e0e0e0;
-        border: 1px solid #333;
-        cursor: pointer;
-        font-weight: bold;
-        transition: all 0.3s;
-      }
-      .category-btn.active {
-        background-color: #bb86fc;
-        color: #121212;
-        border-color: #bb86fc;
-      }
-      .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-      }
-      .home-link {
-        color: #bb86fc;
-        text-decoration: none;
-        padding: 5px 10px;
-        border-radius: 4px;
-        border: 1px solid #bb86fc;
-        transition: all 0.3s;
-      }
-      .home-link:hover {
-        background-color: #bb86fc;
-        color: #121212;
-      }
-      /* Added styles for progress column */
-      .progress-column {
-        width: 150px;
-      }
-      
-      /* NEW STYLES - Match home page user-status and logout link */
-      #user-status {
-        display: flex;
-        align-items: center;
-      }
-      #user-status span {
-        margin-right: 10px;
-        color: #bb86fc;
-      }
-      #user-status a {
-        color: #03dac6;
-        text-decoration: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        border: 1px solid #03dac6;
-        transition: all 0.3s;
-      }
-      #user-status a:hover {
-        background-color: #03dac6;
-        color: #121212;
-      }
-    </style>
-  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #bb86fc; /* Purple accent color */
+    }
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .search {
+      padding: 8px;
+      width: 300px;
+      border-radius: 4px;
+      border: 1px solid #333;
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+      margin-bottom: 10px;
+    }
+    .filter-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .btn {
+      padding: 8px 12px;
+      background-color: #bb86fc; /* Purple accent color */
+      color: #121212;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #9d4edd;
+    }
+    .btn-secondary {
+      background-color: #bb86fc; /* Teal accent color */
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #1f1f1f;
+      position: sticky;
+      top: 0;
+      cursor: pointer;
+      color: #bb86fc; /* Purple accent color */
+    }
+    th:hover {
+      background-color: #2d2d2d;
+    }
+    tr:nth-child(even) {
+      background-color: #1a1a1a;
+    }
+    tr:hover {
+      background-color: #2d2d2d;
+    }
+    .status-cell {
+      text-align: center;
+    }
+    .status-select, select, input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+      border: 1px solid #333;
+      border-radius: 3px;
+    }
+    .save-container {
+      text-align: right;
+      margin-top: 20px;
+    }
+    .statistics {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #1e1e1e;
+      border-radius: 5px;
+      border: 1px solid #333;
+    }
+    .stats-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #bb86fc; /* Purple accent color */
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .stat-item {
+      padding: 10px;
+      background-color: #262626;
+      border-radius: 4px;
+      border: 1px solid #333;
+    }
+    /* Status color indicators */
+    .watched-stat {
+      color: #bb86fc; /* Teal accent for completed */
+    }
+    .watching-stat {
+      color: #bb86fc; /* Purple accent for in progress */
+    }
+    .plan-stat {
+      color: #3700b3; /* Dark purple for plan to watch */
+    }
+    .not-stat {
+      color: #888888; /* Gray for not started */
+    }
+    .dropped-stat {
+      color: #cf6679; /* Red-ish for dropped */
+    }
+    .category-selector {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+    .category-btn {
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+      border: 1px solid #333;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    .category-btn.active {
+      background-color: #bb86fc;
+      color: #121212;
+      border-color: #bb86fc;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .home-link {
+      color: #bb86fc;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      border: 1px solid #bb86fc;
+      transition: all 0.3s;
+    }
+    .home-link:hover {
+      background-color: #bb86fc;
+      color: #121212;
+    }
+    
+    /* NEW STYLES - Match home page user-status and logout link */
+    #user-status {
+      display: flex;
+      align-items: center;
+    }
+    #user-status span {
+      margin-right: 10px;
+      color: #bb86fc;
+    }
+    #user-status a {
+      color: #bb86fc;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px solid #bb86fc;
+      transition: all 0.3s;
+    }
+    #user-status a:hover {
+      background-color: #bb86fc;
+      color: #121212;
+    }
+  </style>
+</head>
 <body>
   <div class="nav-container">
     <a href="/" class="home-link">← Home</a>
@@ -233,6 +211,7 @@
     <button class="category-btn active" data-category="tv">TV Shows</button>
     <button class="category-btn" data-category="movies">Movies</button>
     <button class="category-btn" data-category="anime">Anime</button>
+    <button class="category-btn" data-category="cartoons">Cartoons</button>
   </div>
   
   <div class="controls">
@@ -286,11 +265,8 @@
       tv: {
         title: "TV Shows",
         items: [
-          "American Dad!", "Aqua Teen Hunger Force", "Archer", "Big Mouth", 
-          "BoJack Horseman", "Bob's Burgers", "Breaking Bad", "Better Call Saul",
-          "Family Guy", "Futurama", "Game of Thrones", "House of the Dragon",
-          "Rick and Morty", "South Park", "Stranger Things", "The Office",
-          "The Simpsons", "The Last of Us", "Succession", "Wednesday"
+          "Breaking Bad", "Better Call Saul", "Game of Thrones", "House of the Dragon",
+          "Stranger Things", "The Office", "The Last of Us", "Succession", "Wednesday"
           // Add more shows as needed
         ]
       },
@@ -318,6 +294,91 @@
           "Ghost in the Shell", "Akira", "Violet Evergarden", "Steins;Gate"
           // Add more anime as needed
         ]
+      },
+      cartoons: {
+        title: "Cartoons",
+        items: [
+          "12 oz. Mouse", "3-South", "ADHD Shorts", "Adventure Time", "Adventure Time: Fionna and Cake", 
+          "The Adventures of Baxter and McGuire", "The Adventures of Chico and Guapo", 
+          "The Adventures of Edward the Less", "The Adventures of OG Sherlock Kush", "Æon Flux", 
+          "Agent Elvis", "Alien News Desk", "Allen Gregory", "The Ambiguously Gay Duo", 
+          "American Dad!", "Animals", "Aqua Teen Hunger Force", "Archer", "Assy McGee", 
+          "Avatar: The Last Airbender", "The Awesomes", "Axe Cop", "Baby Blues", 
+          "Ballmastrz: 9009", "Batman: The Animated Series", "Beavis and Butt-Head", 
+          "Bee and PuppyCat", "Big Mouth", "Birdgirl", "Black Dynamite", "Bless the Harts", 
+          "Bob's Burgers", "BoJack Horseman", "The Boondocks", "Bordertown", 
+          "The Boys Presents: Diabolical", "Brad Neely's Harg Nallin' Sclopio Peepio", 
+          "The Brak Show", "Bravest Warriors", "Brickleberry", "The Brothers Grunt", 
+          "Cake", "Camp Camp", "Camp WWE", "Capitol Critters", "Captain Fall", 
+          "Carol & the End of the World", "Cartoon Sushi", "Castlevania", "Ceasar and Chuy", 
+          "Celebrity Deathmatch", "Central Park", "Cheyenne Cinnamon and the Fantabulous Unicorn of Sugar Town Candy Fudge", 
+          "Chicago Party Aunt", "China, IL", "Chozen", "Clerks: The Animated Series", 
+          "The Cleveland Show", "Click and Clack's As the Wrench Turns", "Clone High", 
+          "Close Enough", "Code Monkeys", "Codefellas", "Common Side Effects", 
+          "Courage the Cowardly Dog", "Creature Comforts", "The Critic", "Crossing Swords", 
+          "The Cyanide & Happiness Show", "Dallas & Robo", "Daria", "Devil May Care", 
+          "Dexter's Laboratory", "The Dick & Paula Celebrity Special", "Dick Figures", 
+          "Dicktown", "Digman!", "Dilbert", "Disenchantment", "DJ & the Fro", 
+          "Dr. Katz, Professional Therapist", "Doomlands", "Downtown", "Drawn Together", 
+          "Dream Corp LLC", "The Drinky Crow Show", "The Duck Factory", "Duckman", 
+          "DuckTales", "Duncanville", "Everybody Still Hates Chris", "Exploding Kittens", 
+          "F Is for Family", "Fairfax", "Fairview", "Family Dog", "Family Guy", "Farzar", 
+          "Father of the Pride", "Fatherhood", "Final Space", "Fired on Mars", "Fish Police", 
+          "The Flintstones", "The Freak Brothers", "Freak Show", "Free for All", 
+          "Friday: The Animated Series", "Frisky Dingo", "Fugget About It", "Full English", 
+          "Futurama", "Game Over", "Gary & Mike", "Gary and His Demons", "Gary the Rat", 
+          "Gēmusetto", "Ginger Snaps", "Glenn Martin, DDS", "The God & Devil Show", 
+          "God, the Devil and Bob", "Golan the Insatiable", "Good Morning Today", 
+          "Good Times: Black Again", "Good Vibes", "The Goodbye Family", "The Goode Family", 
+          "The Great North", "Greatest Party Story Ever", "Gravity Falls", "Grimsburg", 
+          "The Guardians of Justice", "Happy Tree Friends", "Hard Drinkin' Lincoln", 
+          "Harley Quinn", "HarmonQuest", "The Harper House", "Harvey Birdman, Attorney at Law", 
+          "Hazbin Hotel", "He-Man and the Masters of the Universe", "The Head", "Hell Den", 
+          "Helluva Boss", "Hey Joel", "Hey Monie!", "High School USA!", "Hit-Monkey", 
+          "Home Movies", "Hoops", "Hopeless Pictures", "House of Cosbys", "HouseBroken", 
+          "How It Should Have Ended", "Human Kind Of", "Human Resources", "Imaginary Mary", 
+          "Inside Job", "Jeff & Some Aliens", "The Jellies!", "JJ Villard's Fairy Tales", 
+          "Johnny Bravo", "Jokebook", "Kid Notorious", "King of the Hill", "King Star King", 
+          "Kite Man: Hell Yeah!", "Koala Man", "Krapopolis", "Krogzilla", "Lazor Wulf", 
+          "The Legend of Vox Machina", "Legends of Chamberlain Heights", "The Life & Times of Tim", 
+          "Like, Share, Die", "Lil' Bush", "Liquid Television", "Little Demon", 
+          "Liverspots and Astronots", "Lizzy the Lezzy", "Loafy", "Looney Tunes", 
+          "Love, Death & Robots", "Lucas Bros. Moving Co.", "Lucy, the Daughter of the Devil", 
+          "Lugar Heights", "M.O.D.O.K.", "Magical Girl Friendship Squad", 
+          "Magical Girl Friendship Squad: Origins", "Major Lazer", "Marvel Superheroes: What the--?!", 
+          "Mary Shelley's Frankenhole", "The Maxx", "Metalocalypse", "The Midnight Gospel", 
+          "Mike Judge Presents: Tales from the Tour Bus", "Mike Tyson Mysteries", "Minoriteam", 
+          "Mission Hill", "Momma Named Me Sheriff", "Mongo Wrestling Alliance", "Moonbeam City", 
+          "Moral Orel", "The Most Popular Girls in School", "Mother Up!", "Mr. Pickles", 
+          "Mr. Wong", "Mulligan", "Napoleon Dynamite", "Neighbors from Hell", "Neo Yokio", 
+          "Number 1 Happy Family USA", "The Nutshack", "The Oblongs", "Off the Air", 
+          "Oh My God... Yes! A Series of Extremely Relatable Circumstances", "Ollie & Scoops", 
+          "Our Cartoon President", "Out There", "Outer Space Astronauts", "Paradise PD", 
+          "Paranormal Action Squad", "Party Legends", "Perfect Hair Forever", "Phineas and Ferb", 
+          "The PJs", "Planet Unicorn", "Popzilla", "Powerpuff Girls", "Praise Petey", 
+          "The Prince", "Q-Force", "Queer Duck", "Regular Show", "Ren & Stimpy \"Adult Party Cartoon\"", 
+          "Rick and Morty", "Rick and Morty: The Anime", "Rick & Steve: The Happiest Gay Couple in All the World", 
+          "The Ricky Gervais Show", "Robot Chicken", "The Rotten Fruit", "Royal Crackers", 
+          "RWBY Chibi", "Sammy", "Samurai Jack", "Santa Inc.", "Saturday Morning All Star Hits!", 
+          "Sausage Party: Foodtopia", "Scooby-Doo", "Sealab 2021", "The Second Best Hospital in the Galaxy", 
+          "Seth MacFarlane's Cavalcade of Cartoon Comedy", "The Shivering Truth", 
+          "Shorties Watchin' Shorties", "The Simpsons", "Sit Down, Shut Up", "Slacker Cats", 
+          "Smiling Friends", "Solar Opposites", "Son of Zorn", "Soul Quest Overdrive", 
+          "South Park", "Space Ghost Coast to Coast", "Spaceballs: The Animated Series", 
+          "Spongebob Squarepants", "Spy Groove", "Squidbillies", "Star Trek: Lower Decks", 
+          "Starship Regulars", "Starveillance", "Station Zero", "Steven Universe", "Stone Quackers", 
+          "Strange Planet", "Stressed Eric", "Stripperella", "Stroker & Hoop", "Sugar and Toys", 
+          "SuperFuckers", "Superjail!", "SuperMansion", "SuperNews!", "Tarantula", "Teen Titans", 
+          "Teenage Euthanasia", "Ten Year Old Tom", "Tender Touches", "This Just In!", 
+          "Titan Maximum", "Tom and Jerry", "Tom Goes to the Mayor", "Tooning Out the News", 
+          "Tripping the Rift", "TripTank", "Tuca & Bertie", "TV Funhouse", "Ugly Americans", 
+          "Undergrads", "Undone", "Universal Basic Guys", "Unsupervised", "Velma", 
+          "The Venture Bros.", "VH1 ILL-ustrated", "Wait Till Your Father Gets Home", 
+          "Where My Dogs At?", "Where's Huddles?", "Wild Life", "Wonder Showzen", 
+          "The Wrong Coast", "X-Men: The Animated Series", "The X-Presidents", 
+          "Xavier: Renegade Angel", "The Xtacles", "YOLO", "You're Not a Monster", 
+          "Young Love", "Zombie College"
+        ]
       }
     };
 
@@ -325,7 +386,8 @@
     let userData = JSON.parse(localStorage.getItem('mediaTrackerData')) || {
       tv: {},
       movies: {},
-      anime: {}
+      anime: {},
+      cartoons: {}
     };
     
     // Current category
@@ -344,7 +406,8 @@
             userData = JSON.parse(localStorage.getItem('mediaTrackerData')) || {
               tv: {},
               movies: {},
-              anime: {}
+              anime: {},
+              cartoons: {}
             };
             isLoggedIn = false;
             
@@ -373,7 +436,8 @@
           userData = JSON.parse(localStorage.getItem('mediaTrackerData')) || {
             tv: {},
             movies: {},
-            anime: {}
+            anime: {},
+            cartoons: {}
           };
           
           // Initialize items
@@ -396,54 +460,12 @@
             userData[category][item] = {
               status: "not", // Default status is "not watched"
               rating: "", // Empty rating by default
-              notes: "", // Empty notes by default
-              currentSeason: "", // Added for season tracking
-              currentEpisode: "", // Added for episode tracking
-              totalSeasons: "", // Added for total seasons tracking
-              totalEpisodes: "" // Added for total episodes tracking
+              notes: "" // Empty notes by default
+              // Removed progress tracking fields
             };
-          } else {
-            // Make sure existing entries have the progress fields
-            if (userData[category][item].currentSeason === undefined) {
-              userData[category][item].currentSeason = "";
-            }
-            if (userData[category][item].currentEpisode === undefined) {
-              userData[category][item].currentEpisode = "";
-            }
-            if (userData[category][item].totalSeasons === undefined) {
-              userData[category][item].totalSeasons = "";
-            }
-            if (userData[category][item].totalEpisodes === undefined) {
-              userData[category][item].totalEpisodes = "";
-            }
           }
         });
       });
-    }
-
-    // In the table header creation part
-    function updateTableHeader() {
-      const tableHead = document.querySelector('#showsTable thead tr');
-      tableHead.innerHTML = ''; // Clear existing headers
-      
-      // Add common headers
-      tableHead.innerHTML += '<th onclick="sortTable(0)">Title</th>';
-      tableHead.innerHTML += '<th onclick="sortTable(1)">Status</th>';
-      tableHead.innerHTML += '<th onclick="sortTable(2)">Rating</th>';
-      
-      // Only add progress column for TV Shows and Anime
-      if (currentCategory === 'tv' || currentCategory === 'anime') {
-        tableHead.innerHTML += '<th class="progress-column">Progress</th>';
-      }
-      
-      tableHead.innerHTML += '<th>Notes</th>';
-    }
-
-    // Function to get cookie value by name
-    function getCookie(name) {
-      const value = `; ${document.cookie}`;
-      const parts = value.split(`; ${name}=`);
-      if (parts.length === 2) return parts.pop().split(';').shift();
     }
 
     // Function to populate the table
@@ -454,22 +476,17 @@
       // Update heading
       document.querySelector('h1').textContent = `${categories[currentCategory].title} Tracker`;
       
-      // Update table headers based on category
+      // Update table headers
       const tableHeader = document.querySelector('#showsTable thead tr');
       tableHeader.innerHTML = ''; // Clear existing headers
       
-      // Add standard headers
+      // Add standard headers (without progress column)
       tableHeader.innerHTML += '<th onclick="sortTable(0)">Title</th>';
       tableHeader.innerHTML += '<th onclick="sortTable(1)">Status</th>';
       tableHeader.innerHTML += '<th onclick="sortTable(2)">Rating</th>';
-      
-      // Only add progress column for TV Shows and Anime
-      if (currentCategory === 'tv' || currentCategory === 'anime') {
-        tableHeader.innerHTML += '<th class="progress-column">Progress</th>';
-      }
-      
-      // Add notes header
       tableHeader.innerHTML += '<th>Notes</th>';
+      tableHeader.innerHTML += '<th>Share</th>';
+
       
       // Get current items and sort alphabetically
       const items = [...categories[currentCategory].items].sort();
@@ -570,77 +587,6 @@
         ratingCell.appendChild(ratingSelect);
         row.appendChild(ratingCell);
         
-        // Progress input (Season/Episode) - only for TV shows and anime
-        if (currentCategory === 'tv' || currentCategory === 'anime') {
-          const progressCell = document.createElement('td');
-          progressCell.className = 'progress-cell';
-          
-          // Create a container div for the season/episode inputs
-          const progressContainer = document.createElement('div');
-          progressContainer.className = 'progress-inputs';
-          
-          // Season input
-          const seasonInput = document.createElement('input');
-          seasonInput.type = 'number';
-          seasonInput.min = '0';
-          seasonInput.placeholder = 'Season';
-          seasonInput.value = userData[currentCategory][item].currentSeason || '';
-          seasonInput.dataset.item = item;
-          seasonInput.dataset.field = 'currentSeason';
-          
-          // Episode input
-          const episodeInput = document.createElement('input');
-          episodeInput.type = 'number';
-          episodeInput.min = '0';
-          episodeInput.placeholder = 'Episode';
-          episodeInput.value = userData[currentCategory][item].currentEpisode || '';
-          episodeInput.dataset.item = item;
-          episodeInput.dataset.field = 'currentEpisode';
-          
-          // Add separator
-          const separator = document.createElement('div');
-          separator.className = 'separator';
-          separator.textContent = '/';
-          
-          // Total seasons input
-          const totalSeasonsInput = document.createElement('input');
-          totalSeasonsInput.type = 'number';
-          totalSeasonsInput.min = '0';
-          totalSeasonsInput.placeholder = 'Total S';
-          totalSeasonsInput.value = userData[currentCategory][item].totalSeasons || '';
-          totalSeasonsInput.dataset.item = item;
-          totalSeasonsInput.dataset.field = 'totalSeasons';
-          
-          // Total episodes input
-          const totalEpisodesInput = document.createElement('input');
-          totalEpisodesInput.type = 'number';
-          totalEpisodesInput.min = '0';
-          totalEpisodesInput.placeholder = 'Total E';
-          totalEpisodesInput.value = userData[currentCategory][item].totalEpisodes || '';
-          totalEpisodesInput.dataset.item = item;
-          totalEpisodesInput.dataset.field = 'totalEpisodes';
-          
-          // Add all inputs to the container
-          progressContainer.appendChild(seasonInput);
-          progressContainer.appendChild(episodeInput);
-          progressContainer.appendChild(separator);
-          progressContainer.appendChild(totalSeasonsInput);
-          progressContainer.appendChild(totalEpisodesInput);
-          
-          // Add event listeners to save changes
-          [seasonInput, episodeInput, totalSeasonsInput, totalEpisodesInput].forEach(input => {
-            input.addEventListener('change', (e) => {
-              const item = e.target.dataset.item;
-              const field = e.target.dataset.field;
-              userData[currentCategory][item][field] = e.target.value;
-              saveToLocalStorage();
-            });
-          });
-          
-          progressCell.appendChild(progressContainer);
-          row.appendChild(progressCell);
-        }
-        
         // Notes input
         const notesCell = document.createElement('td');
         const notesInput = document.createElement('input');
@@ -660,6 +606,21 @@
         row.appendChild(notesCell);
         
         tableBody.appendChild(row);
+
+        // Share button
+        const shareCell = document.createElement('td');
+        const shareButton = document.createElement('button');
+        shareButton.className = 'btn btn-secondary';
+        shareButton.textContent = 'Share';
+        shareButton.dataset.item = item;
+        shareButton.dataset.rating = userData[currentCategory][item].rating || '';
+        shareButton.addEventListener('click', (e) => {
+          const item = e.target.dataset.item;
+          const rating = e.target.dataset.rating;
+          openShareModal(item, rating);
+        });
+        shareCell.appendChild(shareButton);
+        row.appendChild(shareCell);
       });
       
       updateStatistics();
@@ -907,15 +868,8 @@
     });
 
     function exportCSV() {
-      // Start with the standard fields
-      let csvContent = "Title,Status,Rating";
-      
-      // Add progress fields only for TV and anime
-      if (currentCategory === 'tv' || currentCategory === 'anime') {
-        csvContent += ",Current Season,Current Episode,Total Seasons,Total Episodes";
-      }
-      
-      csvContent += ",Notes\n";
+      // Start with the standard fields (without progress fields)
+      let csvContent = "Title,Status,Rating,Notes\n";
       
       // Sort items alphabetically
       const items = [...categories[currentCategory].items].sort();
@@ -943,44 +897,14 @@
           return field;
         };
         
-        // Start with standard fields
-        let row = `${escapeCSV(item)},${statusText},${rating}`;
-        
-        // Add progress fields only for TV and anime
-        if (currentCategory === 'tv' || currentCategory === 'anime') {
-          const currentSeason = userData[currentCategory][item]?.currentSeason || '';
-          const currentEpisode = userData[currentCategory][item]?.currentEpisode || '';
-          const totalSeasons = userData[currentCategory][item]?.totalSeasons || '';
-          const totalEpisodes = userData[currentCategory][item]?.totalEpisodes || '';
-          
-          row += `,${currentSeason},${currentEpisode},${totalSeasons},${totalEpisodes}`;
-        }
-        
-        // Add notes and line break
-        row += `,${escapeCSV(notes)}\n`;
+        // Create row without progress fields
+        let row = `${escapeCSV(item)},${statusText},${rating},${escapeCSV(notes)}\n`;
         csvContent += row;
       });
       
       const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
-      link.setAttribute('href', url);
-      link.setAttribute('download', `${categories[currentCategory].title.toLowerCase().replace(/\s+/g, '_')}_tracker.csv`);
-      link.style.visibility = 'hidden';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-
-    // JSON export function (for backup/import)
-    function exportJSON() {
-      const dataStr = JSON.stringify(userData);
-      const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
-      const exportName = 'media_tracker_data.json';
-      
-      const linkElement = document.createElement('a');
-      linkElement.setAttribute('href', dataUri);
-      linkElement.setAttribute('download', exportName);
       linkElement.click();
     }
 
@@ -1017,4 +941,3 @@
     document.addEventListener('DOMContentLoaded', loadUserData);
   </script>
 </body>
-</html>

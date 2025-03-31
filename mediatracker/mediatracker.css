@@ -232,15 +232,15 @@ tr:hover {
 }
 
 #user-status a {
-  color: #03dac6;
+  color: #bb86fc;
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid #03dac6;
+  border: 1px solid #bb86fc;
   transition: all 0.3s;
 }
 
 #user-status a:hover {
-  background-color: #03dac6;
+  background-color: #bb86fc;
   color: #121212;
 }
