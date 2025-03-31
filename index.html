@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        /* Login/Register Button */
+        #user-status {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        #top-login-link {
+            color: #bb86fc;
+            text-decoration: none;
+            background-color: transparent;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #bb86fc;
+            transition: all 0.3s;
+        }
+
+        #top-login-link:hover {
+            background-color: #bb86fc;
+            color: #121212;
+        }
+        
+        /* Styling for logout button to match second reference */
+        #user-status a[href="/logout.php"] {
+            color: #bb86fc;
+            text-decoration: none;
+            background-color: transparent;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #bb86fc;
+            transition: all 0.3s;
+        }
+        
+        #user-status a[href="/logout.php"]:hover {
+            background-color: #bb86fc;
+            color: #121212;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        header h1 {
+            color: #bb86fc;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        /* Navigation/Media Tracker */
+        nav {
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            margin: 20px 0;
+        }
+
+        .media-tracker-btn {
+            display: inline-block;
+            background-color: #bb86fc;
+            color: #121212;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .media-tracker-btn:hover {
+            background-color: #9966cc;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .main-content {
+            background-color: rgba(30, 30, 30, 0.5);
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .main-content h2 {
+            color: #bb86fc;
+            margin-top: 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="user-status">
+        <a href="/login.php" id="top-login-link">Login / Register</a>
+    </div>
+    
+    <header>
+        <h1>Welcome to Soul's Website</h1>
+        <p>I'll fuckin' put whatever I want here.</p>
+        <p>Waine, you're a stinkaroo.</p>
+    </header>
+    
+    <nav>
+        <a href="/mediatracker/" class="media-tracker-btn">Media Tracker</a>
+    </nav>
+    
+    <div class="container">
+        <div class="main-content">
+            <h2>About This Site</h2>
+            <p>This is where I share information and tools that are important to me.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 | soulioli.com | All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to check login status
+        function checkLoginStatus() {
+            fetch('check_login.php')
+                .then(response => response.json())
+                .then(data => {
+                    const userStatusElement = document.getElementById('user-status');
+                    
+                    if (data.loggedin) {
+                        // User is logged in
+                        userStatusElement.innerHTML = `
+                            <span>Logged in as: ${data.username}</span>
+                            <a href="/logout.php">Logout</a>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error checking login status:', error);
+                });
+        }
+
+        // Call the function when the page loads
+        document.addEventListener('DOMContentLoaded', checkLoginStatus);
+    </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/soulioli/public_html/
+    - /bin/cp -R * $DEPLOYPATH

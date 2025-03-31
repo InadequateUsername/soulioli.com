@@ -1,0 +1,48 @@
+[30-Mar-2025 14:51:09 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'your_db_username'@'localhost' (using password: YES) in /home/soulioli/public_html/config.php:9
+Stack trace:
+#0 /home/soulioli/public_html/config.php(9): mysqli_connect('localhost', 'your_db_usernam...', 'your_db_passwor...', 'tracker_db')
+#1 /home/soulioli/public_html/login.php(12): require_once('/home/soulioli/...')
+#2 {main}
+  thrown in /home/soulioli/public_html/config.php on line 9
+[30-Mar-2025 14:52:47 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'your_db_username'@'localhost' (using password: YES) in /home/soulioli/public_html/config.php:9
+Stack trace:
+#0 /home/soulioli/public_html/config.php(9): mysqli_connect('localhost', 'your_db_usernam...', 'your_db_passwor...', 'tracker_db')
+#1 /home/soulioli/public_html/login.php(12): require_once('/home/soulioli/...')
+#2 {main}
+  thrown in /home/soulioli/public_html/config.php on line 9
+[30-Mar-2025 14:52:49 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'your_db_username'@'localhost' (using password: YES) in /home/soulioli/public_html/config.php:9
+Stack trace:
+#0 /home/soulioli/public_html/config.php(9): mysqli_connect('localhost', 'your_db_usernam...', 'your_db_passwor...', 'tracker_db')
+#1 /home/soulioli/public_html/login.php(12): require_once('/home/soulioli/...')
+#2 {main}
+  thrown in /home/soulioli/public_html/config.php on line 9
+[30-Mar-2025 14:52:54 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'your_db_username'@'localhost' (using password: YES) in /home/soulioli/public_html/config.php:9
+Stack trace:
+#0 /home/soulioli/public_html/config.php(9): mysqli_connect('localhost', 'your_db_usernam...', 'your_db_passwor...', 'tracker_db')
+#1 /home/soulioli/public_html/login.php(12): require_once('/home/soulioli/...')
+#2 {main}
+  thrown in /home/soulioli/public_html/config.php on line 9
+[30-Mar-2025 14:53:00 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'your_db_username'@'localhost' (using password: YES) in /home/soulioli/public_html/config.php:9
+Stack trace:
+#0 /home/soulioli/public_html/config.php(9): mysqli_connect('localhost', 'your_db_usernam...', 'your_db_passwor...', 'tracker_db')
+#1 /home/soulioli/public_html/login.php(12): require_once('/home/soulioli/...')
+#2 {main}
+  thrown in /home/soulioli/public_html/config.php on line 9
+[30-Mar-2025 14:53:34 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'your_db_username'@'localhost' (using password: YES) in /home/soulioli/public_html/config.php:9
+Stack trace:
+#0 /home/soulioli/public_html/config.php(9): mysqli_connect('localhost', 'your_db_usernam...', 'your_db_passwor...', 'tracker_db')
+#1 /home/soulioli/public_html/login.php(12): require_once('/home/soulioli/...')
+#2 {main}
+  thrown in /home/soulioli/public_html/config.php on line 9
+[30-Mar-2025 14:57:32 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'your_db_username'@'localhost' (using password: YES) in /home/soulioli/public_html/config.php:9
+Stack trace:
+#0 /home/soulioli/public_html/config.php(9): mysqli_connect('localhost', 'your_db_usernam...', 'your_db_passwor...', 'tracker_db')
+#1 /home/soulioli/public_html/login.php(12): require_once('/home/soulioli/...')
+#2 {main}
+  thrown in /home/soulioli/public_html/config.php on line 9
+[30-Mar-2025 14:57:33 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'your_db_username'@'localhost' (using password: YES) in /home/soulioli/public_html/config.php:9
+Stack trace:
+#0 /home/soulioli/public_html/config.php(9): mysqli_connect('localhost', 'your_db_usernam...', 'your_db_passwor...', 'tracker_db')
+#1 /home/soulioli/public_html/login.php(12): require_once('/home/soulioli/...')
+#2 {main}
+  thrown in /home/soulioli/public_html/config.php on line 9
