@@ -1,29 +1,46 @@
 // Function to check login status
 function checkLoginStatus() {
-    fetch('check_login.php')
-        .then(response => response.json())
+    console.log("Starting checkLoginStatus function...");
+    
+    fetch('/check_login.php')
+        .then(response => {
+            console.log("Received response:", response);
+            return response.json();
+        })
         .then(data => {
+            console.log("Parsed data:", data);
+            
             const userStatusElement = document.getElementById('user-status');
-            const loginNavItem = document.getElementById('login-nav-item');
-            const topLoginLink = document.getElementById('top-login-link');
+            console.log("User status element:", userStatusElement);
             
             if (data.loggedin) {
-                // User is logged in
+                console.log("User is logged in as:", data.username);
+                
+                // User is logged in - replace the login link with username and logout link
                 userStatusElement.innerHTML = `
-                    <span>Logged in as: ${data.username}</span>
-                    <a href="/logout.php">Logout</a>
+                    <span style="margin-right: 10px; color: #bb86fc;">Logged in as: ${data.username}</span>
+                    <a href="/logout.php" id="top-logout-link">Logout</a>
                 `;
                 
-                // Hide the login button in nav
-                loginNavItem.style.display = 'none';
+                // Add the same style as the login link to the logout link
+                const logoutLink = document.getElementById('top-logout-link');
+                console.log("Logout link element:", logoutLink);
+                
+                if (logoutLink) {
+                    logoutLink.style.color = "#bb86fc";
+                    logoutLink.style.textDecoration = "none";
+                    logoutLink.style.backgroundColor = "transparent";
+                    logoutLink.style.padding = "5px 10px";
+                    logoutLink.style.borderRadius = "5px";
+                    logoutLink.style.border = "1px solid #bb86fc";
+                    console.log("Applied styling to logout link");
+                }
             } else {
-                // User is not logged in
-                // We already have the login link in user-status, so just hide the nav one
-                loginNavItem.style.display = 'none';
+                console.log("User is not logged in");
             }
         })
         .catch(error => {
-            console.error('Error checking login status:', error);
+            console.error("Error checking login status:", error);
         });
 }
 
