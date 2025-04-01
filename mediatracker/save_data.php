@@ -19,7 +19,7 @@ if(!$data) {
     exit;
 }
 
-$user_id = $_SESSION["id"];
+$user_id = $_SESSION["user_id"];
 
 // Remove username from data before saving (if it exists)
 if(isset($data["username"])) {

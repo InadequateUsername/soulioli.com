@@ -3,11 +3,9 @@ const categories = {
   tv: {
     title: "TV Shows",
     items: [
-      "American Dad!", "Aqua Teen Hunger Force", "Archer", "Big Mouth", 
-      "BoJack Horseman", "Bob's Burgers", "Breaking Bad", "Better Call Saul",
-      "Family Guy", "Futurama", "Game of Thrones", "House of the Dragon",
-      "Rick and Morty", "South Park", "Stranger Things", "The Office",
-      "The Simpsons", "The Last of Us", "Succession", "Wednesday"
+      "Breaking Bad", "Better Call Saul", "Game of Thrones", "House of the Dragon",
+      "Stranger Things", "The Office", "The Last of Us", "Succession", "Wednesday"
+      // Add more shows as needed
     ]
   },
   movies: {
@@ -20,6 +18,7 @@ const categories = {
       "Back to the Future", "Toy Story", "The Silence of the Lambs",
       "Goodfellas", "The Lord of the Rings: The Fellowship of the Ring",
       "Fight Club"
+      // Add more movies as needed
     ]
   },
   anime: {
@@ -31,6 +30,92 @@ const categories = {
       "Cowboy Bebop", "Dragon Ball Z", "Neon Genesis Evangelion",
       "Your Name", "Spirited Away", "Princess Mononoke",
       "Ghost in the Shell", "Akira", "Violet Evergarden", "Steins;Gate"
+      // Add more anime as needed
+    ]
+  },
+  cartoons: {
+    title: "Cartoons",
+    items: [
+      "12 oz. Mouse", "3-South", "ADHD Shorts", "Adventure Time", "Adventure Time: Fionna and Cake", 
+      "The Adventures of Baxter and McGuire", "The Adventures of Chico and Guapo", 
+      "The Adventures of Edward the Less", "The Adventures of OG Sherlock Kush", "Æon Flux", 
+      "Agent Elvis", "Alien News Desk", "Allen Gregory", "The Ambiguously Gay Duo", 
+      "American Dad!", "Animals", "Aqua Teen Hunger Force", "Archer", "Assy McGee", 
+      "Avatar: The Last Airbender", "The Awesomes", "Axe Cop", "Baby Blues", 
+      "Ballmastrz: 9009", "Batman: The Animated Series", "Beavis and Butt-Head", 
+      "Bee and PuppyCat", "Big Mouth", "Birdgirl", "Black Dynamite", "Bless the Harts", 
+      "Bob's Burgers", "BoJack Horseman", "The Boondocks", "Bordertown", 
+      "The Boys Presents: Diabolical", "Brad Neely's Harg Nallin' Sclopio Peepio", 
+      "The Brak Show", "Bravest Warriors", "Brickleberry", "The Brothers Grunt", 
+      "Cake", "Camp Camp", "Camp WWE", "Capitol Critters", "Captain Fall", 
+      "Carol & the End of the World", "Cartoon Sushi", "Castlevania", "Ceasar and Chuy", 
+      "Celebrity Deathmatch", "Central Park", "Cheyenne Cinnamon and the Fantabulous Unicorn of Sugar Town Candy Fudge", 
+      "Chicago Party Aunt", "China, IL", "Chozen", "Clerks: The Animated Series", 
+      "The Cleveland Show", "Click and Clack's As the Wrench Turns", "Clone High", 
+      "Close Enough", "Code Monkeys", "Codefellas", "Common Side Effects", 
+      "Courage the Cowardly Dog", "Creature Comforts", "The Critic", "Crossing Swords", 
+      "The Cyanide & Happiness Show", "Dallas & Robo", "Daria", "Devil May Care", 
+      "Dexter's Laboratory", "The Dick & Paula Celebrity Special", "Dick Figures", 
+      "Dicktown", "Digman!", "Dilbert", "Disenchantment", "DJ & the Fro", 
+      "Dr. Katz, Professional Therapist", "Doomlands", "Downtown", "Drawn Together", 
+      "Dream Corp LLC", "The Drinky Crow Show", "The Duck Factory", "Duckman", 
+      "DuckTales", "Duncanville", "Everybody Still Hates Chris", "Exploding Kittens", 
+      "F Is for Family", "Fairfax", "Fairview", "Family Dog", "Family Guy", "Farzar", 
+      "Father of the Pride", "Fatherhood", "Final Space", "Fired on Mars", "Fish Police", 
+      "The Flintstones", "The Freak Brothers", "Freak Show", "Free for All", 
+      "Friday: The Animated Series", "Frisky Dingo", "Fugget About It", "Full English", 
+      "Futurama", "Game Over", "Gary & Mike", "Gary and His Demons", "Gary the Rat", 
+      "Gēmusetto", "Ginger Snaps", "Glenn Martin, DDS", "The God & Devil Show", 
+      "God, the Devil and Bob", "Golan the Insatiable", "Good Morning Today", 
+      "Good Times: Black Again", "Good Vibes", "The Goodbye Family", "The Goode Family", 
+      "The Great North", "Greatest Party Story Ever", "Gravity Falls", "Grimsburg", 
+      "The Guardians of Justice", "Happy Tree Friends", "Hard Drinkin' Lincoln", 
+      "Harley Quinn", "HarmonQuest", "The Harper House", "Harvey Birdman, Attorney at Law", 
+      "Hazbin Hotel", "He-Man and the Masters of the Universe", "The Head", "Hell Den", 
+      "Helluva Boss", "Hey Joel", "Hey Monie!", "High School USA!", "Hit-Monkey", 
+      "Home Movies", "Hoops", "Hopeless Pictures", "House of Cosbys", "HouseBroken", 
+      "How It Should Have Ended", "Human Kind Of", "Human Resources", "Imaginary Mary", 
+      "Inside Job", "Jeff & Some Aliens", "The Jellies!", "JJ Villard's Fairy Tales", 
+      "Johnny Bravo", "Jokebook", "Kid Notorious", "King of the Hill", "King Star King", 
+      "Kite Man: Hell Yeah!", "Koala Man", "Krapopolis", "Krogzilla", "Lazor Wulf", 
+      "The Legend of Vox Machina", "Legends of Chamberlain Heights", "The Life & Times of Tim", 
+      "Like, Share, Die", "Lil' Bush", "Liquid Television", "Little Demon", 
+      "Liverspots and Astronots", "Lizzy the Lezzy", "Loafy", "Looney Tunes", 
+      "Love, Death & Robots", "Lucas Bros. Moving Co.", "Lucy, the Daughter of the Devil", 
+      "Lugar Heights", "M.O.D.O.K.", "Magical Girl Friendship Squad", 
+      "Magical Girl Friendship Squad: Origins", "Major Lazer", "Marvel Superheroes: What the--?!", 
+      "Mary Shelley's Frankenhole", "The Maxx", "Metalocalypse", "The Midnight Gospel", 
+      "Mike Judge Presents: Tales from the Tour Bus", "Mike Tyson Mysteries", "Minoriteam", 
+      "Mission Hill", "Momma Named Me Sheriff", "Mongo Wrestling Alliance", "Moonbeam City", 
+      "Moral Orel", "The Most Popular Girls in School", "Mother Up!", "Mr. Pickles", 
+      "Mr. Wong", "Mulligan", "Napoleon Dynamite", "Neighbors from Hell", "Neo Yokio", 
+      "Number 1 Happy Family USA", "The Nutshack", "The Oblongs", "Off the Air", 
+      "Oh My God... Yes! A Series of Extremely Relatable Circumstances", "Ollie & Scoops", 
+      "Our Cartoon President", "Out There", "Outer Space Astronauts", "Paradise PD", 
+      "Paranormal Action Squad", "Party Legends", "Perfect Hair Forever", "Phineas and Ferb", 
+      "The PJs", "Planet Unicorn", "Popzilla", "Powerpuff Girls", "Praise Petey", 
+      "The Prince", "Q-Force", "Queer Duck", "Regular Show", "Ren & Stimpy \"Adult Party Cartoon\"", 
+      "Rick and Morty", "Rick and Morty: The Anime", "Rick & Steve: The Happiest Gay Couple in All the World", 
+      "The Ricky Gervais Show", "Robot Chicken", "The Rotten Fruit", "Royal Crackers", 
+      "RWBY Chibi", "Sammy", "Samurai Jack", "Santa Inc.", "Saturday Morning All Star Hits!", 
+      "Sausage Party: Foodtopia", "Scooby-Doo", "Sealab 2021", "The Second Best Hospital in the Galaxy", 
+      "Seth MacFarlane's Cavalcade of Cartoon Comedy", "The Shivering Truth", 
+      "Shorties Watchin' Shorties", "The Simpsons", "Sit Down, Shut Up", "Slacker Cats", 
+      "Smiling Friends", "Solar Opposites", "Son of Zorn", "Soul Quest Overdrive", 
+      "South Park", "Space Ghost Coast to Coast", "Spaceballs: The Animated Series", 
+      "Spongebob Squarepants", "Spy Groove", "Squidbillies", "Star Trek: Lower Decks", 
+      "Starship Regulars", "Starveillance", "Station Zero", "Steven Universe", "Stone Quackers", 
+      "Strange Planet", "Stressed Eric", "Stripperella", "Stroker & Hoop", "Sugar and Toys", 
+      "SuperFuckers", "Superjail!", "SuperMansion", "SuperNews!", "Tarantula", "Teen Titans", 
+      "Teenage Euthanasia", "Ten Year Old Tom", "Tender Touches", "This Just In!", 
+      "Titan Maximum", "Tom and Jerry", "Tom Goes to the Mayor", "Tooning Out the News", 
+      "Tripping the Rift", "TripTank", "Tuca & Bertie", "TV Funhouse", "Ugly Americans", 
+      "Undergrads", "Undone", "Universal Basic Guys", "Unsupervised", "Velma", 
+      "The Venture Bros.", "VH1 ILL-ustrated", "Wait Till Your Father Gets Home", 
+      "Where My Dogs At?", "Where's Huddles?", "Wild Life", "Wonder Showzen", 
+      "The Wrong Coast", "X-Men: The Animated Series", "The X-Presidents", 
+      "Xavier: Renegade Angel", "The Xtacles", "YOLO", "You're Not a Monster", 
+      "Young Love", "Zombie College"
     ]
   }
 };
@@ -39,7 +124,8 @@ const categories = {
 let userData = JSON.parse(localStorage.getItem('mediaTrackerData')) || {
   tv: {},
   movies: {},
-  anime: {}
+  anime: {},
+  cartoons: {}
 };
 
 // Current category
@@ -50,32 +136,38 @@ let isLoggedIn = false;
 
 // Function to load user data from server
 function loadUserData() {
+  console.log("Loading user data...");
+  
   fetch('load_data.php')
     .then(response => response.json())
     .then(data => {
+      console.log("Received user data:", data);
+      
       if (data.success === false) {
         // Not logged in or no data, use localStorage
         userData = JSON.parse(localStorage.getItem('mediaTrackerData')) || {
           tv: {},
           movies: {},
-          anime: {}
+          anime: {},
+          cartoons: {}
         };
         isLoggedIn = false;
         
-        // Show login message - Matching home page style
+        console.log("Using localStorage data:", userData);
+        
+        // Show login message
         const userStatus = document.getElementById('user-status');
-        userStatus.innerHTML = '<a href="/login.php">Login / Register</a>';
+        userStatus.innerHTML = '<a href="/login.php" class="home-link">Login / Register</a>';
       } else {
         // User is logged in and has data
         userData = data;
         isLoggedIn = true;
         
-        // Add a logout button - Matching home page style
+        console.log("Using server data:", userData);
+        
+        // Add a logout button - Get username from session data
         const userStatus = document.getElementById('user-status');
-        userStatus.innerHTML = `
-          <span>Logged in as: ${data.username || 'User'}</span>
-          <a href="/logout.php">Logout</a>
-        `;
+        userStatus.innerHTML = `<span>Logged in as: ${data.username || 'User'}</span> <a href="/logout.php">Logout</a>`;
       }
       
       // Initialize items if needed
@@ -90,7 +182,8 @@ function loadUserData() {
       userData = JSON.parse(localStorage.getItem('mediaTrackerData')) || {
         tv: {},
         movies: {},
-        anime: {}
+        anime: {},
+        cartoons: {}
       };
       
       // Initialize items
@@ -113,47 +206,11 @@ function initializeAllCategories() {
         userData[category][item] = {
           status: "not", // Default status is "not watched"
           rating: "", // Empty rating by default
-          notes: "", // Empty notes by default
-          currentSeason: "", // Added for season tracking
-          currentEpisode: "", // Added for episode tracking
-          totalSeasons: "", // Added for total seasons tracking
-          totalEpisodes: "" // Added for total episodes tracking
+          notes: "" // Empty notes by default
         };
-      } else {
-        // Make sure existing entries have the progress fields
-        if (userData[category][item].currentSeason === undefined) {
-          userData[category][item].currentSeason = "";
-        }
-        if (userData[category][item].currentEpisode === undefined) {
-          userData[category][item].currentEpisode = "";
-        }
-        if (userData[category][item].totalSeasons === undefined) {
-          userData[category][item].totalSeasons = "";
-        }
-        if (userData[category][item].totalEpisodes === undefined) {
-          userData[category][item].totalEpisodes = "";
-        }
       }
     });
   });
-}
-
-// Update table header based on category
-function updateTableHeader() {
-  const tableHead = document.querySelector('#showsTable thead tr');
-  tableHead.innerHTML = ''; // Clear existing headers
-  
-  // Add common headers
-  tableHead.innerHTML += '<th onclick="sortTable(0)">Title</th>';
-  tableHead.innerHTML += '<th onclick="sortTable(1)">Status</th>';
-  tableHead.innerHTML += '<th onclick="sortTable(2)">Rating</th>';
-  
-  // Only add progress column for TV Shows and Anime
-  if (currentCategory === 'tv' || currentCategory === 'anime') {
-    tableHead.innerHTML += '<th class="progress-column">Progress</th>';
-  }
-  
-  tableHead.innerHTML += '<th>Notes</th>';
 }
 
 // Function to populate the table
@@ -164,8 +221,16 @@ function populateTable(filterValue = 'all') {
   // Update heading
   document.querySelector('h1').textContent = `${categories[currentCategory].title} Tracker`;
   
-  // Update table headers based on category
-  updateTableHeader();
+  // Update table headers
+  const tableHeader = document.querySelector('#showsTable thead tr');
+  tableHeader.innerHTML = ''; // Clear existing headers
+  
+  // Add standard headers
+  tableHeader.innerHTML += '<th onclick="sortTable(0)">Title</th>';
+  tableHeader.innerHTML += '<th onclick="sortTable(1)">Status</th>';
+  tableHeader.innerHTML += '<th onclick="sortTable(2)">Rating</th>';
+  tableHeader.innerHTML += '<th>Notes</th>';
+  tableHeader.innerHTML += '<th>Share</th>';
   
   // Get current items and sort alphabetically
   const items = [...categories[currentCategory].items].sort();
@@ -266,77 +331,6 @@ function populateTable(filterValue = 'all') {
     ratingCell.appendChild(ratingSelect);
     row.appendChild(ratingCell);
     
-    // Progress input (Season/Episode) - only for TV shows and anime
-    if (currentCategory === 'tv' || currentCategory === 'anime') {
-      const progressCell = document.createElement('td');
-      progressCell.className = 'progress-cell';
-      
-      // Create a container div for the season/episode inputs
-      const progressContainer = document.createElement('div');
-      progressContainer.className = 'progress-inputs';
-      
-      // Season input
-      const seasonInput = document.createElement('input');
-      seasonInput.type = 'number';
-      seasonInput.min = '0';
-      seasonInput.placeholder = 'Season';
-      seasonInput.value = userData[currentCategory][item].currentSeason || '';
-      seasonInput.dataset.item = item;
-      seasonInput.dataset.field = 'currentSeason';
-      
-      // Episode input
-      const episodeInput = document.createElement('input');
-      episodeInput.type = 'number';
-      episodeInput.min = '0';
-      episodeInput.placeholder = 'Episode';
-      episodeInput.value = userData[currentCategory][item].currentEpisode || '';
-      episodeInput.dataset.item = item;
-      episodeInput.dataset.field = 'currentEpisode';
-      
-      // Add separator
-      const separator = document.createElement('div');
-      separator.className = 'separator';
-      separator.textContent = '/';
-      
-      // Total seasons input
-      const totalSeasonsInput = document.createElement('input');
-      totalSeasonsInput.type = 'number';
-      totalSeasonsInput.min = '0';
-      totalSeasonsInput.placeholder = 'Total S';
-      totalSeasonsInput.value = userData[currentCategory][item].totalSeasons || '';
-      totalSeasonsInput.dataset.item = item;
-      totalSeasonsInput.dataset.field = 'totalSeasons';
-      
-      // Total episodes input
-      const totalEpisodesInput = document.createElement('input');
-      totalEpisodesInput.type = 'number';
-      totalEpisodesInput.min = '0';
-      totalEpisodesInput.placeholder = 'Total E';
-      totalEpisodesInput.value = userData[currentCategory][item].totalEpisodes || '';
-      totalEpisodesInput.dataset.item = item;
-      totalEpisodesInput.dataset.field = 'totalEpisodes';
-      
-      // Add all inputs to the container
-      progressContainer.appendChild(seasonInput);
-      progressContainer.appendChild(episodeInput);
-      progressContainer.appendChild(separator);
-      progressContainer.appendChild(totalSeasonsInput);
-      progressContainer.appendChild(totalEpisodesInput);
-      
-      // Add event listeners to save changes
-      [seasonInput, episodeInput, totalSeasonsInput, totalEpisodesInput].forEach(input => {
-        input.addEventListener('change', (e) => {
-          const item = e.target.dataset.item;
-          const field = e.target.dataset.field;
-          userData[currentCategory][item][field] = e.target.value;
-          saveToLocalStorage();
-        });
-      });
-      
-      progressCell.appendChild(progressContainer);
-      row.appendChild(progressCell);
-    }
-    
     // Notes input
     const notesCell = document.createElement('td');
     const notesInput = document.createElement('input');
@@ -354,6 +348,21 @@ function populateTable(filterValue = 'all') {
     
     notesCell.appendChild(notesInput);
     row.appendChild(notesCell);
+    
+    // Share button
+    const shareCell = document.createElement('td');
+    const shareButton = document.createElement('button');
+    shareButton.className = 'btn btn-secondary';
+    shareButton.textContent = 'Share';
+    shareButton.dataset.item = item;
+    shareButton.dataset.rating = userData[currentCategory][item].rating || '';
+    shareButton.addEventListener('click', (e) => {
+      const item = e.target.dataset.item;
+      const rating = e.target.dataset.rating;
+      openShareModal(item, rating);
+    });
+    shareCell.appendChild(shareButton);
+    row.appendChild(shareCell);
     
     tableBody.appendChild(row);
   });
@@ -480,6 +489,86 @@ document.querySelectorAll('.category-btn').forEach(btn => {
   });
 });
 
+// Function to open the share modal
+function openShareModal(title, rating) {
+  const modal = document.getElementById('shareModal');
+  const titleText = document.getElementById('shareTitleText');
+  const ratingText = document.getElementById('shareRatingText');
+  const thoughtsInput = document.getElementById('shareThoughts');
+  
+  // Set values
+  titleText.textContent = title;
+  ratingText.textContent = rating || 'Not Rated';
+  thoughtsInput.value = '';
+  
+  // Update character count
+  document.getElementById('charCount').textContent = '0';
+  
+  // Show modal
+  modal.style.display = 'flex';
+  
+  // Character count functionality
+  thoughtsInput.addEventListener('input', function() {
+    document.getElementById('charCount').textContent = this.value.length;
+  });
+  
+  // Add event listeners for buttons
+  document.getElementById('cancelShareBtn').onclick = function() {
+    modal.style.display = 'none';
+  };
+  
+  document.getElementById('confirmShareBtn').onclick = function() {
+    shareContent(title, rating, thoughtsInput.value);
+    modal.style.display = 'none';
+  };
+}
+
+// Function to handle the share action
+function shareContent(title, rating, thoughts) {
+  if (!isLoggedIn) {
+    alert('Please log in to share your ratings.');
+    return;
+  }
+  
+  // Prepare data to send
+  const shareData = {
+    category: currentCategory,
+    title: title,
+    rating: rating,
+    thoughts: thoughts,
+    timestamp: new Date().toISOString()
+  };
+  
+  // Send to server
+  fetch('/social/share_rating.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(shareData)
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      alert('Your rating has been shared!');
+    } else {
+      alert('Error sharing rating: ' + data.message);
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Error connecting to server. Please try again later.');
+  });
+}
+
+// Close modal if clicking outside
+window.onclick = function(event) {
+  const modal = document.getElementById('shareModal');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
+
 // Handle search input
 document.getElementById('searchInput').addEventListener('input', (e) => {
   const searchText = e.target.value.toLowerCase();
@@ -602,16 +691,10 @@ document.getElementById('exportBtn').addEventListener('click', (event) => {
   event.stopPropagation();
 });
 
+// Fixed function to export CSV
 function exportCSV() {
-  // Start with the standard fields
-  let csvContent = "Title,Status,Rating";
-  
-  // Add progress fields only for TV and anime
-  if (currentCategory === 'tv' || currentCategory === 'anime') {
-    csvContent += ",Current Season,Current Episode,Total Seasons,Total Episodes";
-  }
-  
-  csvContent += ",Notes\n";
+  // Start with the standard fields (without progress fields)
+  let csvContent = "Title,Status,Rating,Notes\n";
   
   // Sort items alphabetically
   const items = [...categories[currentCategory].items].sort();
@@ -639,21 +722,8 @@ function exportCSV() {
       return field;
     };
     
-    // Start with standard fields
-    let row = `${escapeCSV(item)},${statusText},${rating}`;
-    
-    // Add progress fields only for TV and anime
-    if (currentCategory === 'tv' || currentCategory === 'anime') {
-      const currentSeason = userData[currentCategory][item]?.currentSeason || '';
-      const currentEpisode = userData[currentCategory][item]?.currentEpisode || '';
-      const totalSeasons = userData[currentCategory][item]?.totalSeasons || '';
-      const totalEpisodes = userData[currentCategory][item]?.totalEpisodes || '';
-      
-      row += `,${currentSeason},${currentEpisode},${totalSeasons},${totalEpisodes}`;
-    }
-    
-    // Add notes and line break
-    row += `,${escapeCSV(notes)}\n`;
+    // Create row without progress fields
+    let row = `${escapeCSV(item)},${statusText},${rating},${escapeCSV(notes)}\n`;
     csvContent += row;
   });
   
@@ -674,10 +744,10 @@ function exportJSON() {
   const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
   const exportName = 'media_tracker_data.json';
   
-  const linkElement = document.createElement('a');
-  linkElement.setAttribute('href', dataUri);
-  linkElement.setAttribute('download', exportName);
-  linkElement.click();
+  const link = document.createElement('a');
+  link.setAttribute('href', dataUri);
+  link.setAttribute('download', exportName);
+  link.click();
 }
 
 // Handle import button
