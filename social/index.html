@@ -318,6 +318,12 @@
         'cartoons': 'Cartoon'
       }[post.category] || post.category;
       
+      // Properly handle the rating display
+      let ratingDisplay = 'Not Rated';
+      if (post.rating !== null && post.rating !== '') {
+        ratingDisplay = post.rating + '/10';
+      }
+      
       // Create post HTML
       postElement.innerHTML = `
         <div class="post-header">
@@ -329,7 +335,7 @@
         </div>
         <div class="post-title">${post.title}</div>
         <div>
-          <span class="post-rating">${post.rating ? post.rating + '/10' : 'Not Rated'}</span>
+          <span class="post-rating">${ratingDisplay}</span>
         </div>
         <div class="post-thoughts">${post.thoughts}</div>
         <div class="post-actions">

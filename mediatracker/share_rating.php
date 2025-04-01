@@ -28,9 +28,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 $stmt = $conn->prepare("INSERT INTO social_posts (user_id, username, category, title, rating, thoughts, created_at) 
                         VALUES (?, ?, ?, ?, ?, ?, NOW())");
 
+// Handle null rating properly
+$rating = isset($data['rating']) && $data['rating'] !== '' ? $data['rating'] : null;
+
 // Bind parameters
-// Add a check to handle cases where rating might not be set
-$rating = isset($data['rating']) ? $data['rating'] : null;
 $stmt->bind_param("isssss", $user_id, $username, $data['category'], $data['title'], $rating, $data['thoughts']);
 
 // Execute statement

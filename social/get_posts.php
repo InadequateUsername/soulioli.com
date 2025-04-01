@@ -47,6 +47,10 @@ try {
         if (isset($row['is_liked'])) {
             $row['is_liked'] = $row['is_liked'] > 0;
         }
+        
+        // Ensure rating is properly formatted for display
+        $row['rating'] = $row['rating'] === null || $row['rating'] === '' ? null : $row['rating'];
+        
         $posts[] = $row;
     }
 

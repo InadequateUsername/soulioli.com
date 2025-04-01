@@ -755,7 +755,7 @@ function shareContent(title, rating, thoughts) {
   const shareData = {
     category: currentCategory,
     title: title,
-    rating: rating,
+    rating: rating || null, // Ensure rating is null if empty
     thoughts: thoughts,
     timestamp: new Date().toISOString()
   };
