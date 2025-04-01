@@ -308,9 +308,8 @@ tr:hover {
   border: 1px solid #bb86fc;
   transition: all 0.3s;
   margin-right: 15px;
-}
-
-.social-link:hover {
+  }
+  .social-link {
   background-color: #bb86fc;
   color: #121212;
-}
+  }
