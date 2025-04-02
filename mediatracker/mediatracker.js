@@ -688,10 +688,10 @@ function sortTable(n) {
 }
 
 // Handle category buttons
-document.querySelectorAll('.quick-link-btn').forEach(btn => {
+document.querySelectorAll('.category-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     // Remove active class from all buttons
-    document.querySelectorAll('.quick-link-btn').forEach(b => {
+    document.querySelectorAll('.category-btn').forEach(b => {
       b.classList.remove('active');
     });
     

@@ -4,72 +4,29 @@
  * Check login status and update the user status display
  */
 function checkLoginStatus() {
-  console.log('Checking login status...'); // Debug log
-
-  // Prevent multiple simultaneous requests
-  if (window.loginStatusFetching) return;
-  window.loginStatusFetching = true;
-
-  fetch('/check_login.php', {
-    method: 'GET',
-    cache: 'no-store', // Prevent caching
-    headers: {
-      'Cache-Control': 'no-cache'
-    }
-  })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
+  fetch('/check_login.php')
+    .then(response => response.json())
     .then(data => {
-      console.log('Login data received:', data); // Debug log
-
-      const userStatusElements = document.querySelectorAll('#user-status');
-      console.log('Found user status elements:', userStatusElements.length); // Debug log
+      const userStatusElement = document.getElementById('user-status');
       
-      userStatusElements.forEach(userStatusElement => {
+      if (userStatusElement) {
         if (data.loggedin) {
           // User is logged in - display username and logout link
           userStatusElement.innerHTML = `
-            <span><i class="fas fa-user"></i> ${data.username || 'User'}</span>
+            <span><i class="fas fa-user"></i> ${data.username}</span>
             <a href="/logout.php" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
           `;
-          console.log('Set logged-in state'); // Debug log
         } else {
           // User is not logged in - display login link
           userStatusElement.innerHTML = `
             <a href="/login.php" class="home-link"><i class="fas fa-sign-in-alt"></i> Login / Register</a>
           `;
-          console.log('Set logged-out state'); // Debug log
         }
-      });
+      }
     })
     .catch(error => {
       console.error('Error checking login status:', error);
-      
-      // Fallback to login link if there's an error
-      const userStatusElements = document.querySelectorAll('#user-status');
-      userStatusElements.forEach(userStatusElement => {
-        userStatusElement.innerHTML = `
-          <a href="/login.php" class="home-link"><i class="fas fa-sign-in-alt"></i> Login / Register</a>
-        `;
-      });
-    })
-    .finally(() => {
-      window.loginStatusFetching = false;
     });
-}
-
-if (!window.loginStatusInitialized) {
-  // Call check login status immediately
-  checkLoginStatus();
-
-  // Also call on DOMContentLoaded as a backup
-  document.addEventListener('DOMContentLoaded', checkLoginStatus);
-
-  window.loginStatusInitialized = true;
 }
 
 /**

@@ -1,3 +1,36 @@
+// Initialize variables
+let isLoggedIn = false;
+let currentUserId = null;
+let currentUsername = null;
+let currentFilter = 'all';
+let posts = [];
+
+// Check login status
+function checkLoginStatus() {
+  fetch('/check_login.php')
+    .then(response => response.json())
+    .then(data => {
+      if (data.loggedin) {
+        // User is logged in
+        isLoggedIn = true;
+        currentUserId = data.user_id;
+        currentUsername = data.username;
+        
+        // Update the user status display
+        const userStatus = document.getElementById('user-status');
+        userStatus.innerHTML = `<span>Logged in as: ${data.username || 'User'}</span> <a href="/logout.php">Logout</a>`;
+      }
+      
+      // Load posts after checking login status
+      loadPosts();
+    })
+    .catch(error => {
+      console.error('Error checking login status:', error);
+      // Still load posts even if login check fails
+      loadPosts();
+    });
+}
+
 // Function to load posts
 function loadPosts() {
   const feedContainer = document.getElementById('feed-container');
@@ -132,12 +165,6 @@ function createPostElement(post) {
   }
   
   return postElement;
-}
-
-// Modify the function to not duplicate login status check
-function initializePage() {
-  // Load posts after initial setup
-  loadPosts();
 }
 
 // Function to toggle like
