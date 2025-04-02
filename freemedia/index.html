@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/images/soul_society_logo.png" type="image/x-icon">
+  <title>Free Media Resources</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- You can also use your main site CSS instead -->
+  <!-- <link rel="stylesheet" href="/style.css"> -->
+</head>
+<body>
+  <div class="nav-container">
+    <a href="/" class="home-link">← Home</a>
+    <div id="user-status"></div>
+    <a href="/mediatracker/" class="tracker-link">Media Tracker</a>
+  </div>
+  
+  <h1>Free Media Resources</h1>
+  
+  <div class="content-container">
+    <!-- Your main content goes here -->
+    <div class="section">
+      <h2>Welcome to Free Media Resources</h2>
+      <p>This page provides access to free and legal media resources.</p>
+      <!-- Add your content here -->
+    </div>
+  </div>
+  
+  <script>
+    // Function to check login status - similar to other pages
+    function checkLoginStatus() {
+      fetch('/check_login.php')
+        .then(response => response.json())
+        .then(data => {
+          const userStatusElement = document.getElementById('user-status');
+          
+          if (data.loggedin) {
+            userStatusElement.innerHTML = `
+              <span>Logged in as: ${data.username}</span>
+              <a href="/logout.php">Logout</a>
+            `;
+          }
+        })
+        .catch(error => {
+          console.error('Error checking login status:', error);
+        });
+    }
+
+    // Call the function when the page loads
+    document.addEventListener('DOMContentLoaded', checkLoginStatus);
+  </script>
+</body>
+</html>
