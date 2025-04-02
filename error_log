@@ -2050,3 +2050,144 @@ Stack trace:
 )
 
 [02-Apr-2025 19:46:46 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:48:52 UTC] check_login.php - Session data: Array
+(
+)
+
+[02-Apr-2025 19:48:52 UTC] check_login.php - User is NOT logged in
+[02-Apr-2025 19:52:16 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:52:16 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:53:24 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:53:24 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:53:27 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:53:27 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:53:31 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:53:31 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:53:31 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:53:31 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:53:34 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:53:34 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:53:35 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:53:35 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:53:36 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:53:36 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:53:37 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:53:37 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:53:39 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:53:39 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:53:40 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:53:40 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:53:42 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:53:42 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:55:27 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:55:27 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:55:28 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:55:28 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:55:31 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:55:31 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:55:34 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:55:34 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 19:55:44 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 19:55:44 UTC] check_login.php - User is logged in: Soul
