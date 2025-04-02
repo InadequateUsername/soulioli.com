@@ -1,5 +1,0 @@
-# Place this in the same directory as db_config.php
-<Files "db_config.php">
-  Order allow,deny
-  Deny from all
-</Files>
