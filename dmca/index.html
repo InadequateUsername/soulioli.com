@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/soul_society_logo.png" type="image/x-icon">
   <title>DMCA Takedown Request - Soulioli</title>
-  <link rel="stylesheet" href="/freemedia/style.css">
-  <link rel="stylesheet" href="dmca.css">
+  <link rel="stylesheet" href="/style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <div class="container">
     <div class="nav-container">
-      <a href="/" class="home-link">← Home</a>
-      <div id="user-status"></div>
-      <a href="/freemedia/" class="other-link">Free Media</a>
+      <a href="/" class="home-link"><i class="fas fa-home"></i> Home</a>
+      <div id="user-status">
+        <!-- This will be populated by JavaScript -->
+      </div>
+      <a href="/freemedia/" class="other-link"><i class="fas fa-photo-video"></i> Free Media</a>
     </div>
 
     <header>
@@ -21,18 +24,18 @@
       <p>Information regarding copyright infringement claims</p>
     </header>
 
-    <div class="info-section">
-      <h2>Copyright Infringement Policy</h2>
+    <div class="card info-section">
+      <h2><i class="fas fa-gavel"></i> Copyright Infringement Policy</h2>
       <p>
         Soulioli respects the intellectual property rights of others and expects its users to do the same. In accordance with the Digital Millennium Copyright Act of 1998 ("DMCA"), Soulioli will respond expeditiously to claims of copyright infringement that are reported to our designated copyright agent.
       </p>
       
-      <h3>What is the DMCA?</h3>
+      <h3><i class="fas fa-question-circle"></i> What is the DMCA?</h3>
       <p>
         The DMCA provides a legal procedure for copyright holders to request the removal of content that allegedly infringes upon their rights. If we receive a proper DMCA takedown notice, we will remove the allegedly infringing content and notify the content provider.
       </p>
       
-      <h3>DMCA Takedown Notice Requirements</h3>
+      <h3><i class="fas fa-clipboard-list"></i> DMCA Takedown Notice Requirements</h3>
       <p>To be effective, your DMCA takedown notice must include the following:</p>
       <ul>
         <li>A physical or electronic signature of a person authorized to act on behalf of the owner of an exclusive right that is allegedly infringed.</li>
@@ -44,8 +47,8 @@
       </ul>
     </div>
 
-    <div class="dmca-form">
-      <h2>Submit a DMCA Takedown Request</h2>
+    <div class="card dmca-form">
+      <h2><i class="fas fa-file-alt"></i> Submit a DMCA Takedown Request</h2>
       <p>Please fill out the form below to submit your DMCA takedown request. All fields are required unless otherwise noted.</p>
       
       <form action="process_dmca.php" method="post">
@@ -90,18 +93,20 @@
         </div>
         
         <div class="form-group">
-          <input type="submit" value="Submit DMCA Takedown Request" class="submit-btn">
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Submit DMCA Takedown Request
+          </button>
         </div>
       </form>
     </div>
 
-    <div class="info-section">
-      <h2>Alternative Submission Method</h2>
+    <div class="card info-section">
+      <h2><i class="fas fa-envelope"></i> Alternative Submission Method</h2>
       <p>
         If you prefer, you can also submit your DMCA takedown notice via email to <strong>dmca@soulioli.com</strong>. Please ensure your email includes all the required information listed above.
       </p>
       
-      <h3>What Happens Next?</h3>
+      <h3><i class="fas fa-question-circle"></i> What Happens Next?</h3>
       <p>
         Upon receipt of a valid DMCA takedown notice, we will:
       </p>
@@ -111,12 +116,12 @@
         <li>Provide the content provider with information about how they can submit a counter-notice.</li>
       </ul>
       
-      <h3>DMCA Counter-Notice</h3>
+      <h3><i class="fas fa-balance-scale"></i> DMCA Counter-Notice</h3>
       <p>
         If you believe your content was removed as a result of mistake or misidentification, you may submit a counter-notice to our designated agent. Instructions for submitting a counter-notice will be provided in our notification of content removal.
       </p>
       
-      <h3>Repeat Infringers</h3>
+      <h3><i class="fas fa-exclamation-triangle"></i> Repeat Infringers</h3>
       <p>
         We maintain a policy to terminate, in appropriate circumstances, the accounts of users who are repeat infringers.
       </p>
@@ -124,11 +129,12 @@
 
     <p class="disclaimer">
       Disclaimer: This DMCA Takedown Request page is provided for informational purposes and to facilitate copyright-related communications. It does not constitute legal advice.
+      <br><br>
       © 2025 Soulioli. All rights reserved.
     </p>
   </div>
 
-  <script src="/freemedia/script.js"></script>
+  <script src="/script.js"></script>
   <script src="dmca.js"></script>
 </body>
 </html>

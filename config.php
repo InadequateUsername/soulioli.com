@@ -16,11 +16,17 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 try {
-    // Try to load the database configuration file from a secure location
-    $db_config_path = $_SERVER['DOCUMENT_ROOT'] . '/db_config.php';
+    // Set the path to the database configuration file
+    $db_config_path = $_SERVER['DOCUMENT_ROOT'] . '/private/db_config.php';
+    
+    // If using a subdirectory for your site, you might need to adjust this path
+    if (!file_exists($db_config_path)) {
+        // Try a relative path as fallback
+        $db_config_path = dirname(__FILE__) . '/../private/db_config.php';
+    }
     
     if (!file_exists($db_config_path)) {
-        throw new Exception("Database configuration file not found.");
+        throw new Exception("Database configuration file not found at: $db_config_path");
     }
     
     $db_config = require_once $db_config_path;

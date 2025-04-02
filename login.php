@@ -26,7 +26,7 @@ debug_log("SESSION at start: " . print_r($_SESSION, true));
 // Check if the user is already logged in, if yes then redirect to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     debug_log("User already logged in - redirecting to mediatracker");
-    //header("location: mediatracker/");
+    header("location: mediatracker/");
     exit;
 }
  
@@ -124,7 +124,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             debug_log("About to redirect to home page");
                             
                             // Redirect user to welcome page
-                          //  header("location: /");
+                            header("location: /");
                             exit; // Add this to ensure code stops executing after redirect
                         } else{
                             // Password is not valid, display a generic error message
