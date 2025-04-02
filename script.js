@@ -7,13 +7,13 @@ function checkLoginStatus() {
   fetch('/check_login.php')
     .then(response => response.json())
     .then(data => {
-      const userStatusElement = document.getElementById('user-status');
+      const userStatusElements = document.querySelectorAll('#user-status');
       
-      if (userStatusElement) {
+      userStatusElements.forEach(userStatusElement => {
         if (data.loggedin) {
           // User is logged in - display username and logout link
           userStatusElement.innerHTML = `
-            <span><i class="fas fa-user"></i> ${data.username}</span>
+            <span><i class="fas fa-user"></i> ${data.username || 'User'}</span>
             <a href="/logout.php" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
           `;
         } else {
@@ -22,7 +22,7 @@ function checkLoginStatus() {
             <a href="/login.php" class="home-link"><i class="fas fa-sign-in-alt"></i> Login / Register</a>
           `;
         }
-      }
+      });
     })
     .catch(error => {
       console.error('Error checking login status:', error);

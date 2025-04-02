@@ -1170,3 +1170,195 @@
 )
 
 [2025-04-02 18:40:33] About to redirect to home page
+[2025-04-02 19:30:57] Login page accessed
+[2025-04-02 19:30:57] SESSION at start: Array
+(
+)
+
+[2025-04-02 19:30:57] Database connection: SUCCESS
+[2025-04-02 19:30:57] Rendering login form
+[2025-04-02 19:30:57] Login page fully rendered
+[2025-04-02 19:30:58] Login page accessed
+[2025-04-02 19:30:58] SESSION at start: Array
+(
+)
+
+[2025-04-02 19:30:58] Database connection: SUCCESS
+[2025-04-02 19:30:58] Form submitted via POST
+[2025-04-02 19:30:58] POST data: Array
+(
+    [username] => Soul
+    [password] => MR=EQ2.z)BxA;Rt
+)
+
+[2025-04-02 19:30:58] Username entered: Soul
+[2025-04-02 19:30:58] Password entered: NOT EMPTY
+[2025-04-02 19:30:58] Username validated: Soul
+[2025-04-02 19:30:58] Password provided (not logged for security)
+[2025-04-02 19:30:58] Username and password provided, proceeding with validation
+[2025-04-02 19:30:58] SQL query: SELECT id, username, password FROM users WHERE username = ?
+[2025-04-02 19:30:58] SQL statement prepared successfully
+[2025-04-02 19:30:58] Parameter bound: username = Soul
+[2025-04-02 19:30:58] Executing SQL statement
+[2025-04-02 19:30:58] SQL statement executed successfully
+[2025-04-02 19:30:58] Number of matching rows: 1
+[2025-04-02 19:30:58] Username found in database
+[2025-04-02 19:30:58] Result variables bound
+[2025-04-02 19:30:58] Data fetched from statement
+[2025-04-02 19:30:58] User ID: 1, Username: Soul
+[2025-04-02 19:30:58] Stored hashed password length: 60
+[2025-04-02 19:30:58] Attempting password verification
+[2025-04-02 19:30:58] Password verification result: SUCCESS
+[2025-04-02 19:30:58] Password verified successfully
+[2025-04-02 19:30:58] Session variables set: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 19:30:58] About to redirect to home page
+[2025-04-02 19:38:45] Login page accessed
+[2025-04-02 19:38:45] SESSION at start: Array
+(
+)
+
+[2025-04-02 19:38:45] Database connection: SUCCESS
+[2025-04-02 19:38:45] Rendering login form
+[2025-04-02 19:38:45] Login page fully rendered
+[2025-04-02 19:38:47] Login page accessed
+[2025-04-02 19:38:47] SESSION at start: Array
+(
+)
+
+[2025-04-02 19:38:47] Database connection: SUCCESS
+[2025-04-02 19:38:47] Form submitted via POST
+[2025-04-02 19:38:47] POST data: Array
+(
+    [username] => Soul
+    [password] => MR=EQ2.z)BxA;Rt
+)
+
+[2025-04-02 19:38:47] Username entered: Soul
+[2025-04-02 19:38:47] Password entered: NOT EMPTY
+[2025-04-02 19:38:47] Username validated: Soul
+[2025-04-02 19:38:47] Password provided (not logged for security)
+[2025-04-02 19:38:47] Username and password provided, proceeding with validation
+[2025-04-02 19:38:47] SQL query: SELECT id, username, password FROM users WHERE username = ?
+[2025-04-02 19:38:47] SQL statement prepared successfully
+[2025-04-02 19:38:47] Parameter bound: username = Soul
+[2025-04-02 19:38:47] Executing SQL statement
+[2025-04-02 19:38:47] SQL statement executed successfully
+[2025-04-02 19:38:47] Number of matching rows: 1
+[2025-04-02 19:38:47] Username found in database
+[2025-04-02 19:38:47] Result variables bound
+[2025-04-02 19:38:47] Data fetched from statement
+[2025-04-02 19:38:47] User ID: 1, Username: Soul
+[2025-04-02 19:38:47] Stored hashed password length: 60
+[2025-04-02 19:38:47] Attempting password verification
+[2025-04-02 19:38:47] Password verification result: SUCCESS
+[2025-04-02 19:38:47] Password verified successfully
+[2025-04-02 19:38:47] Session variables set: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 19:38:47] About to redirect to home page
+[2025-04-02 19:42:09] Login page accessed
+[2025-04-02 19:42:09] SESSION at start: Array
+(
+)
+
+[2025-04-02 19:42:09] Database connection: SUCCESS
+[2025-04-02 19:42:09] Rendering login form
+[2025-04-02 19:42:09] Login page fully rendered
+[2025-04-02 19:42:10] Login page accessed
+[2025-04-02 19:42:10] SESSION at start: Array
+(
+)
+
+[2025-04-02 19:42:10] Database connection: SUCCESS
+[2025-04-02 19:42:10] Form submitted via POST
+[2025-04-02 19:42:10] POST data: Array
+(
+    [username] => Soul
+    [password] => MR=EQ2.z)BxA;Rt
+)
+
+[2025-04-02 19:42:10] Username entered: Soul
+[2025-04-02 19:42:10] Password entered: NOT EMPTY
+[2025-04-02 19:42:10] Username validated: Soul
+[2025-04-02 19:42:10] Password provided (not logged for security)
+[2025-04-02 19:42:10] Username and password provided, proceeding with validation
+[2025-04-02 19:42:10] SQL query: SELECT id, username, password FROM users WHERE username = ?
+[2025-04-02 19:42:10] SQL statement prepared successfully
+[2025-04-02 19:42:10] Parameter bound: username = Soul
+[2025-04-02 19:42:10] Executing SQL statement
+[2025-04-02 19:42:10] SQL statement executed successfully
+[2025-04-02 19:42:10] Number of matching rows: 1
+[2025-04-02 19:42:10] Username found in database
+[2025-04-02 19:42:10] Result variables bound
+[2025-04-02 19:42:10] Data fetched from statement
+[2025-04-02 19:42:10] User ID: 1, Username: Soul
+[2025-04-02 19:42:10] Stored hashed password length: 60
+[2025-04-02 19:42:10] Attempting password verification
+[2025-04-02 19:42:10] Password verification result: SUCCESS
+[2025-04-02 19:42:10] Password verified successfully
+[2025-04-02 19:42:10] Session variables set: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 19:42:10] About to redirect to home page
+[2025-04-02 19:46:43] Login page accessed
+[2025-04-02 19:46:43] SESSION at start: Array
+(
+)
+
+[2025-04-02 19:46:43] Database connection: SUCCESS
+[2025-04-02 19:46:43] Rendering login form
+[2025-04-02 19:46:43] Login page fully rendered
+[2025-04-02 19:46:44] Login page accessed
+[2025-04-02 19:46:44] SESSION at start: Array
+(
+)
+
+[2025-04-02 19:46:44] Database connection: SUCCESS
+[2025-04-02 19:46:44] Form submitted via POST
+[2025-04-02 19:46:44] POST data: Array
+(
+    [username] => Soul
+    [password] => MR=EQ2.z)BxA;Rt
+)
+
+[2025-04-02 19:46:44] Username entered: Soul
+[2025-04-02 19:46:44] Password entered: NOT EMPTY
+[2025-04-02 19:46:44] Username validated: Soul
+[2025-04-02 19:46:44] Password provided (not logged for security)
+[2025-04-02 19:46:44] Username and password provided, proceeding with validation
+[2025-04-02 19:46:44] SQL query: SELECT id, username, password FROM users WHERE username = ?
+[2025-04-02 19:46:44] SQL statement prepared successfully
+[2025-04-02 19:46:44] Parameter bound: username = Soul
+[2025-04-02 19:46:44] Executing SQL statement
+[2025-04-02 19:46:44] SQL statement executed successfully
+[2025-04-02 19:46:44] Number of matching rows: 1
+[2025-04-02 19:46:44] Username found in database
+[2025-04-02 19:46:44] Result variables bound
+[2025-04-02 19:46:44] Data fetched from statement
+[2025-04-02 19:46:44] User ID: 1, Username: Soul
+[2025-04-02 19:46:44] Stored hashed password length: 60
+[2025-04-02 19:46:44] Attempting password verification
+[2025-04-02 19:46:44] Password verification result: SUCCESS
+[2025-04-02 19:46:44] Password verified successfully
+[2025-04-02 19:46:44] Session variables set: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 19:46:44] About to redirect to home page

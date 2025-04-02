@@ -44,7 +44,6 @@ h1 {
   animation: neon-pulse 2s infinite alternate;
 }
 
-/* Secondary headers */
 h2 {
   color: #bb86fc;
   margin-top: 30px;
@@ -58,40 +57,6 @@ h3 {
   color: #bb86fc;
   font-size: 1.4em;
   margin-top: 20px;
-}
-
-/* Quick Links Buttons */
-.quick-link-btn {
-  display: inline-block;
-  padding: 12px 20px;
-  background-color: rgba(45, 45, 45, 0.7);
-  color: #bb86fc;
-  border: 1px solid rgba(187, 134, 252, 0.3);
-  border-radius: 8px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.quick-link-btn:hover {
-  background-color: rgba(187, 134, 252, 0.2);
-  color: #fff;
-  border-color: #bb86fc;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-}
-
-.quick-link-btn.active {
-  background-color: #bb86fc;
-  color: #121212;
-  border-color: #bb86fc;
-}
-
-.quick-link-btn i {
-  margin-right: 8px;
 }
 
 /* Logo and header area */
@@ -497,4 +462,39 @@ footer, .disclaimer {
   .card {
     padding: 15px;
   }
+}
+
+
+/* Quick Links Buttons */
+.quick-link-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: rgba(45, 45, 45, 0.7);
+  color: #bb86fc;
+  border: 1px solid rgba(187, 134, 252, 0.3);
+  border-radius: 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quick-link-btn:hover {
+  background-color: rgba(187, 134, 252, 0.2);
+  color: #fff;
+  border-color: #bb86fc;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quick-link-btn.active {
+  background-color: #bb86fc;
+  color: #121212;
+  border-color: #bb86fc;
+}
+
+.quick-link-btn i {
+  margin-right: 8px;
 }
