@@ -17,11 +17,8 @@ function checkLoginStatus() {
         currentUsername = data.username;
         
         // Update the user status display
-        const userStatusElement = document.getElementById('user-status');
-        userStatusElement.innerHTML = `
-          <span>Logged in as: ${data.username}</span>
-          <a href="/logout.php">Logout</a>
-        `;
+        const userStatus = document.getElementById('user-status');
+        userStatus.innerHTML = `<span>Logged in as: ${data.username || 'User'}</span> <a href="/logout.php">Logout</a>`;
       }
       
       // Load posts after checking login status
