@@ -1,0 +1,11 @@
+[2025-04-02 21:22:26] [INFO] (0 s) === Starting scraper ===
+[2025-04-02 21:22:26] [INFO] (0 s) Database connection established
+[2025-04-02 21:22:26] [INFO] (0 s) TV shows table created or already exists
+[2025-04-02 21:22:26] [INFO] (0 s) Scraping: https://en.wikipedia.org/wiki/List_of_American_television_programs_by_debut_date_(2020s)
+[2025-04-02 21:22:27] [ERROR] (0.44 s) No wikitables found on the page
+[2025-04-02 21:22:27] [SUCCESS] (0.44 s) Completed scraping https://en.wikipedia.org/wiki/List_of_American_television_programs_by_debut_date_(2020s) - Added 0 shows
+[2025-04-02 21:22:29] [INFO] (2.44 s) Scraping: https://en.wikipedia.org/wiki/List_of_American_television_programs_by_debut_date_(2010s)
+[2025-04-02 21:22:29] [ERROR] (2.94 s) No wikitables found on the page
+[2025-04-02 21:22:29] [SUCCESS] (2.94 s) Completed scraping https://en.wikipedia.org/wiki/List_of_American_television_programs_by_debut_date_(2010s) - Added 0 shows
+[2025-04-02 21:22:31] [SUCCESS] (4.94 s) Scraping complete! Added a total of 0 TV shows to the database.
+[2025-04-02 21:22:31] [INFO] (4.94 s) === Scraper finished ===

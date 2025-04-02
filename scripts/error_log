@@ -1,0 +1,4 @@
+[02-Apr-2025 21:22:26 UTC] PHP Warning:  ini_set(): Session ini settings cannot be changed after headers have already been sent in /home/soulioli/public_html/config.php on line 5
+[02-Apr-2025 21:22:26 UTC] PHP Warning:  ini_set(): Session ini settings cannot be changed after headers have already been sent in /home/soulioli/public_html/config.php on line 6
+[02-Apr-2025 21:22:26 UTC] PHP Warning:  ini_set(): Session ini settings cannot be changed after headers have already been sent in /home/soulioli/public_html/config.php on line 7
+[02-Apr-2025 21:22:26 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/soulioli/public_html/config.php on line 10
