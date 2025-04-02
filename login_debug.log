@@ -766,3 +766,237 @@
 )
 
 [2025-04-02 11:47:35] About to redirect to home page
+[2025-04-02 16:52:16] Login page accessed
+[2025-04-02 16:52:16] SESSION at start: Array
+(
+)
+
+[2025-04-02 16:52:16] Database connection: SUCCESS
+[2025-04-02 16:52:16] Rendering login form
+[2025-04-02 16:52:16] Login page fully rendered
+[2025-04-02 16:52:17] Login page accessed
+[2025-04-02 16:52:17] SESSION at start: Array
+(
+)
+
+[2025-04-02 16:52:17] Database connection: SUCCESS
+[2025-04-02 16:52:17] Form submitted via POST
+[2025-04-02 16:52:17] POST data: Array
+(
+    [username] => Soul
+    [password] => MR=EQ2.z)BxA;Rt
+)
+
+[2025-04-02 16:52:17] Username entered: Soul
+[2025-04-02 16:52:17] Password entered: NOT EMPTY
+[2025-04-02 16:52:17] Username validated: Soul
+[2025-04-02 16:52:17] Password provided (not logged for security)
+[2025-04-02 16:52:17] Username and password provided, proceeding with validation
+[2025-04-02 16:52:17] SQL query: SELECT id, username, password FROM users WHERE username = ?
+[2025-04-02 16:52:17] SQL statement prepared successfully
+[2025-04-02 16:52:17] Parameter bound: username = Soul
+[2025-04-02 16:52:17] Executing SQL statement
+[2025-04-02 16:52:17] SQL statement executed successfully
+[2025-04-02 16:52:17] Number of matching rows: 1
+[2025-04-02 16:52:17] Username found in database
+[2025-04-02 16:52:17] Result variables bound
+[2025-04-02 16:52:17] Data fetched from statement
+[2025-04-02 16:52:17] User ID: 1, Username: Soul
+[2025-04-02 16:52:17] Stored hashed password length: 60
+[2025-04-02 16:52:17] Attempting password verification
+[2025-04-02 16:52:17] Password verification result: SUCCESS
+[2025-04-02 16:52:17] Password verified successfully
+[2025-04-02 16:52:17] Session variables set: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 16:52:17] About to redirect to home page
+[2025-04-02 16:56:58] Login page accessed
+[2025-04-02 16:56:58] SESSION at start: Array
+(
+)
+
+[2025-04-02 16:56:58] Database connection: SUCCESS
+[2025-04-02 16:56:58] Rendering login form
+[2025-04-02 16:56:58] Login page fully rendered
+[2025-04-02 16:57:00] Login page accessed
+[2025-04-02 16:57:00] SESSION at start: Array
+(
+)
+
+[2025-04-02 16:57:00] Database connection: SUCCESS
+[2025-04-02 16:57:00] Form submitted via POST
+[2025-04-02 16:57:00] POST data: Array
+(
+    [username] => Soul
+    [password] => MR=EQ2.z)BxA;Rt
+)
+
+[2025-04-02 16:57:00] Username entered: Soul
+[2025-04-02 16:57:00] Password entered: NOT EMPTY
+[2025-04-02 16:57:00] Username validated: Soul
+[2025-04-02 16:57:00] Password provided (not logged for security)
+[2025-04-02 16:57:00] Username and password provided, proceeding with validation
+[2025-04-02 16:57:00] SQL query: SELECT id, username, password FROM users WHERE username = ?
+[2025-04-02 16:57:00] SQL statement prepared successfully
+[2025-04-02 16:57:00] Parameter bound: username = Soul
+[2025-04-02 16:57:00] Executing SQL statement
+[2025-04-02 16:57:00] SQL statement executed successfully
+[2025-04-02 16:57:00] Number of matching rows: 1
+[2025-04-02 16:57:00] Username found in database
+[2025-04-02 16:57:00] Result variables bound
+[2025-04-02 16:57:00] Data fetched from statement
+[2025-04-02 16:57:00] User ID: 1, Username: Soul
+[2025-04-02 16:57:00] Stored hashed password length: 60
+[2025-04-02 16:57:00] Attempting password verification
+[2025-04-02 16:57:00] Password verification result: SUCCESS
+[2025-04-02 16:57:00] Password verified successfully
+[2025-04-02 16:57:00] Session variables set: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 16:57:00] About to redirect to home page
+[2025-04-02 16:57:34] Login page accessed
+[2025-04-02 16:57:34] SESSION at start: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 16:57:34] User already logged in - redirecting to mediatracker
+[2025-04-02 16:57:35] Login page accessed
+[2025-04-02 16:57:35] SESSION at start: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 16:57:35] User already logged in - redirecting to mediatracker
+[2025-04-02 16:57:36] Login page accessed
+[2025-04-02 16:57:36] SESSION at start: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 16:57:36] User already logged in - redirecting to mediatracker
+[2025-04-02 16:57:54] Login page accessed
+[2025-04-02 16:57:54] SESSION at start: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 16:57:54] User already logged in - redirecting to mediatracker
+[2025-04-02 16:59:15] Login page accessed
+[2025-04-02 16:59:15] SESSION at start: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 16:59:15] User already logged in - redirecting to mediatracker
+[2025-04-02 16:59:16] Login page accessed
+[2025-04-02 16:59:16] SESSION at start: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 16:59:16] User already logged in - redirecting to mediatracker
+[2025-04-02 16:59:35] Login page accessed
+[2025-04-02 16:59:35] SESSION at start: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 16:59:35] User already logged in - redirecting to mediatracker
+[2025-04-02 16:59:36] Login page accessed
+[2025-04-02 16:59:36] SESSION at start: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 16:59:36] User already logged in - redirecting to mediatracker
+[2025-04-02 16:59:38] Login page accessed
+[2025-04-02 16:59:38] SESSION at start: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 16:59:38] User already logged in - redirecting to mediatracker
+[2025-04-02 16:59:48] Login page accessed
+[2025-04-02 16:59:48] SESSION at start: Array
+(
+)
+
+[2025-04-02 16:59:48] Database connection: SUCCESS
+[2025-04-02 16:59:48] Rendering login form
+[2025-04-02 16:59:48] Login page fully rendered
+[2025-04-02 16:59:49] Login page accessed
+[2025-04-02 16:59:49] SESSION at start: Array
+(
+)
+
+[2025-04-02 16:59:49] Database connection: SUCCESS
+[2025-04-02 16:59:49] Form submitted via POST
+[2025-04-02 16:59:49] POST data: Array
+(
+    [username] => Soul
+    [password] => MR=EQ2.z)BxA;Rt
+)
+
+[2025-04-02 16:59:49] Username entered: Soul
+[2025-04-02 16:59:49] Password entered: NOT EMPTY
+[2025-04-02 16:59:49] Username validated: Soul
+[2025-04-02 16:59:49] Password provided (not logged for security)
+[2025-04-02 16:59:49] Username and password provided, proceeding with validation
+[2025-04-02 16:59:49] SQL query: SELECT id, username, password FROM users WHERE username = ?
+[2025-04-02 16:59:49] SQL statement prepared successfully
+[2025-04-02 16:59:49] Parameter bound: username = Soul
+[2025-04-02 16:59:49] Executing SQL statement
+[2025-04-02 16:59:49] SQL statement executed successfully
+[2025-04-02 16:59:49] Number of matching rows: 1
+[2025-04-02 16:59:49] Username found in database
+[2025-04-02 16:59:49] Result variables bound
+[2025-04-02 16:59:49] Data fetched from statement
+[2025-04-02 16:59:49] User ID: 1, Username: Soul
+[2025-04-02 16:59:49] Stored hashed password length: 60
+[2025-04-02 16:59:49] Attempting password verification
+[2025-04-02 16:59:49] Password verification result: SUCCESS
+[2025-04-02 16:59:49] Password verified successfully
+[2025-04-02 16:59:49] Session variables set: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 16:59:49] About to redirect to home page
+[2025-04-02 17:01:03] Login page accessed
+[2025-04-02 17:01:03] SESSION at start: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[2025-04-02 17:01:03] User already logged in - redirecting to mediatracker

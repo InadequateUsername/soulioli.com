@@ -1129,3 +1129,121 @@
 )
 
 [02-Apr-2025 16:25:31 UTC] check_login.php - User is NOT logged in
+[02-Apr-2025 16:37:27 UTC] check_login.php - Session data: Array
+(
+)
+
+[02-Apr-2025 16:37:27 UTC] check_login.php - User is NOT logged in
+[02-Apr-2025 16:37:28 UTC] check_login.php - Session data: Array
+(
+)
+
+[02-Apr-2025 16:37:28 UTC] check_login.php - User is NOT logged in
+[02-Apr-2025 16:38:21 UTC] check_login.php - Session data: Array
+(
+)
+
+[02-Apr-2025 16:38:21 UTC] check_login.php - User is NOT logged in
+[02-Apr-2025 16:38:22 UTC] check_login.php - Session data: Array
+(
+)
+
+[02-Apr-2025 16:38:22 UTC] check_login.php - User is NOT logged in
+[02-Apr-2025 16:38:23 UTC] check_login.php - Session data: Array
+(
+)
+
+[02-Apr-2025 16:38:23 UTC] check_login.php - User is NOT logged in
+[02-Apr-2025 16:44:16 UTC] check_login.php - Session data: Array
+(
+)
+
+[02-Apr-2025 16:44:16 UTC] check_login.php - User is NOT logged in
+[02-Apr-2025 16:45:10 UTC] check_login.php - Session data: Array
+(
+)
+
+[02-Apr-2025 16:45:10 UTC] check_login.php - User is NOT logged in
+[02-Apr-2025 16:49:22 UTC] check_login.php - Session data: Array
+(
+)
+
+[02-Apr-2025 16:49:22 UTC] check_login.php - User is NOT logged in
+[02-Apr-2025 16:49:52 UTC] check_login.php - Session data: Array
+(
+)
+
+[02-Apr-2025 16:49:52 UTC] check_login.php - User is NOT logged in
+[02-Apr-2025 16:52:14 UTC] check_login.php - Session data: Array
+(
+)
+
+[02-Apr-2025 16:52:14 UTC] check_login.php - User is NOT logged in
+[02-Apr-2025 16:52:17 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 16:52:17 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 16:52:24 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 16:52:24 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 16:52:25 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 16:52:25 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 16:52:26 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 16:52:26 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 16:52:30 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 16:52:30 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 16:55:02 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[02-Apr-2025 16:55:02 UTC] check_login.php - User is logged in: Soul
+[02-Apr-2025 16:55:04 UTC] check_login.php - Session data: Array
+(
+)
+
+[02-Apr-2025 16:55:04 UTC] check_login.php - User is NOT logged in
+[02-Apr-2025 16:55:05 UTC] PHP Warning:  require_once(/home/soulioli/public_html/db_config.php): Failed to open stream: No such file or directory in /home/soulioli/public_html/config.php on line 14
+[02-Apr-2025 16:55:05 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/soulioli/public_html/db_config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/soulioli/public_html/config.php:14
+Stack trace:
+#0 /home/soulioli/public_html/login.php(11): require_once()
+#1 {main}
+  thrown in /home/soulioli/public_html/config.php on line 14
+[02-Apr-2025 16:57:00 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soulioli/db_config.php:1) in /home/soulioli/public_html/login.php on line 127
+[02-Apr-2025 16:57:34 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soulioli/db_config.php:1) in /home/soulioli/public_html/login.php on line 29
+[02-Apr-2025 16:57:35 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soulioli/db_config.php:1) in /home/soulioli/public_html/login.php on line 29
+[02-Apr-2025 16:57:36 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soulioli/db_config.php:1) in /home/soulioli/public_html/login.php on line 29
+[02-Apr-2025 16:59:47 UTC] check_login.php - Session data: Array
+(
+)
+
+[02-Apr-2025 16:59:47 UTC] check_login.php - User is NOT logged in

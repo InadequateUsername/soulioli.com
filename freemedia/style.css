@@ -1,16 +1,86 @@
 body {
   font-family: Arial, sans-serif;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
   background-color: #121212;
   color: #e0e0e0;
 }
 
-h1 {
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
   text-align: center;
-  margin-bottom: 20px;
-  color: #bb86fc; /* Purple accent color */
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: #bb86fc;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.warning-box {
+  background-color: #1e1e1e;
+  border: 1px solid #bb86fc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.category {
+  background-color: #1e1e1e;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.category h2 {
+  color: #bb86fc;
+  margin-top: 0;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.media-link {
+  background-color: #2d2d2d;
+  border-radius: 5px;
+  padding: 15px;
+  transition: all 0.3s;
+}
+
+.media-link:hover {
+  background-color: #333;
+  transform: translateY(-3px);
+}
+
+.media-link a {
+  color: #bb86fc;
+  text-decoration: none;
+  display: block;
+}
+
+.media-link p {
+  margin: 5px 0 0 0;
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+.disclaimer {
+  font-size: 0.8em;
+  text-align: center;
+  margin-top: 30px;
+  color: #666;
 }
 
 .nav-container {
@@ -20,7 +90,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-.home-link, .tracker-link {
+.home-link, .other-link {
   color: #bb86fc;
   text-decoration: none;
   padding: 5px 10px;
@@ -29,7 +99,7 @@ h1 {
   transition: all 0.3s;
 }
 
-.home-link:hover, .tracker-link:hover {
+.home-link:hover, .other-link:hover {
   background-color: #bb86fc;
   color: #121212;
 }
@@ -56,21 +126,4 @@ h1 {
 #user-status a:hover {
   background-color: #bb86fc;
   color: #121212;
-}
-
-.content-container {
-  margin-top: 20px;
-}
-
-.section {
-  background-color: #1e1e1e;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #333;
-}
-
-h2 {
-  color: #bb86fc;
-  margin-top: 0;
 }

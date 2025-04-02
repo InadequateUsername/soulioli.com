@@ -6,49 +6,151 @@
   <link rel="icon" href="/images/soul_society_logo.png" type="image/x-icon">
   <title>Free Media Resources</title>
   <link rel="stylesheet" href="style.css">
-  <!-- You can also use your main site CSS instead -->
-  <!-- <link rel="stylesheet" href="/style.css"> -->
 </head>
 <body>
-  <div class="nav-container">
-    <a href="/" class="home-link">← Home</a>
-    <div id="user-status"></div>
-    <a href="/mediatracker/" class="tracker-link">Media Tracker</a>
-  </div>
-  
-  <h1>Free Media Resources</h1>
-  
-  <div class="content-container">
-    <!-- Your main content goes here -->
-    <div class="section">
-      <h2>Welcome to Free Media Resources</h2>
-      <p>This page provides access to free and legal media resources.</p>
-      <!-- Add your content here -->
+  <div class="container">
+    <div class="nav-container">
+      <a href="/" class="home-link">← Home</a>
+      <div id="user-status"></div>
+      <a href="/mediatracker/" class="other-link">Media Tracker</a>
     </div>
-  </div>
-  
-  <script>
-    // Function to check login status - similar to other pages
-    function checkLoginStatus() {
-      fetch('/check_login.php')
-        .then(response => response.json())
-        .then(data => {
-          const userStatusElement = document.getElementById('user-status');
-          
-          if (data.loggedin) {
-            userStatusElement.innerHTML = `
-              <span>Logged in as: ${data.username}</span>
-              <a href="/logout.php">Logout</a>
-            `;
-          }
-        })
-        .catch(error => {
-          console.error('Error checking login status:', error);
-        });
-    }
 
-    // Call the function when the page loads
-    document.addEventListener('DOMContentLoaded', checkLoginStatus);
-  </script>
+    <header>
+      <h1>Free Media Resources</h1>
+      <p>A curated collection of free and legal media resources</p>
+    </header>
+
+    <div class="warning-box">
+      <strong>⚠️ Important:</strong> Please use an ad-blocker before clicking on any of the links below to avoid ads/popups.
+    </div>
+
+    <div class="category">
+      <h2>Video Streaming</h2>
+      <div class="link-grid">
+        <div class="media-link">
+          <a href="https://www.pluto.tv/" target="_blank">Pluto TV</a>
+          <p>Free live TV channels and on-demand movies</p>
+        </div>
+        <div class="media-link">
+          <a href="https://tubitv.com/" target="_blank">Tubi</a>
+          <p>Free movies and TV shows with ads</p>
+        </div>
+        <div class="media-link">
+          <a href="https://www.crackle.com/" target="_blank">Crackle</a>
+          <p>Free movies and TV shows library</p>
+        </div>
+        <div class="media-link">
+          <a href="https://www.pbs.org/video/" target="_blank">PBS Video</a>
+          <p>Free documentaries and educational content</p>
+        </div>
+        <div class="media-link">
+          <a href="https://www.peacocktv.com/" target="_blank">Peacock (Free Tier)</a>
+          <p>NBCUniversal's free streaming service</p>
+        </div>
+        <div class="media-link">
+          <a href="https://www.roku.com/the-roku-channel" target="_blank">The Roku Channel</a>
+          <p>Free movies and TV shows (no Roku device needed)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>Music & Audio</h2>
+      <div class="link-grid">
+        <div class="media-link">
+          <a href="https://www.spotify.com/" target="_blank">Spotify (Free)</a>
+          <p>Free music streaming with ads</p>
+        </div>
+        <div class="media-link">
+          <a href="https://soundcloud.com/" target="_blank">SoundCloud</a>
+          <p>Free music, podcasts, and user-generated content</p>
+        </div>
+        <div class="media-link">
+          <a href="https://freemusicarchive.org/" target="_blank">Free Music Archive</a>
+          <p>Free, legal audio downloads</p>
+        </div>
+        <div class="media-link">
+          <a href="https://www.jamendo.com/" target="_blank">Jamendo</a>
+          <p>Free music downloads from independent artists</p>
+        </div>
+        <div class="media-link">
+          <a href="https://archive.org/details/audio" target="_blank">Internet Archive Audio</a>
+          <p>Public domain audio files</p>
+        </div>
+        <div class="media-link">
+          <a href="https://www.npr.org/podcasts/" target="_blank">NPR Podcasts</a>
+          <p>Free podcasts on various topics</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>Books & Reading</h2>
+      <div class="link-grid">
+        <div class="media-link">
+          <a href="https://www.gutenberg.org/" target="_blank">Project Gutenberg</a>
+          <p>Free public domain ebooks</p>
+        </div>
+        <div class="media-link">
+          <a href="https://www.overdrive.com/apps/libby/" target="_blank">Libby</a>
+          <p>Free ebooks and audiobooks with library card</p>
+        </div>
+        <div class="media-link">
+          <a href="https://openlibrary.org/" target="_blank">Open Library</a>
+          <p>Free ebooks to borrow</p>
+        </div>
+        <div class="media-link">
+          <a href="https://manybooks.net/" target="_blank">ManyBooks</a>
+          <p>Free and discounted ebooks</p>
+        </div>
+        <div class="media-link">
+          <a href="https://www.wattpad.com/" target="_blank">Wattpad</a>
+          <p>Free stories from amateur and professional writers</p>
+        </div>
+        <div class="media-link">
+          <a href="https://standardebooks.org/" target="_blank">Standard Ebooks</a>
+          <p>Professional-quality, free public domain ebooks</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>Educational Content</h2>
+      <div class="link-grid">
+        <div class="media-link">
+          <a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a>
+          <p>Free educational courses on various subjects</p>
+        </div>
+        <div class="media-link">
+          <a href="https://www.coursera.org/courses?query=free" target="_blank">Coursera (Free Courses)</a>
+          <p>Free online courses from universities</p>
+        </div>
+        <div class="media-link">
+          <a href="https://www.edx.org/search?tab=course" target="_blank">edX (Free Courses)</a>
+          <p>Free courses from top educational institutions</p>
+        </div>
+        <div class="media-link">
+          <a href="https://www.ted.com/" target="_blank">TED Talks</a>
+          <p>Free educational and inspirational talks</p>
+        </div>
+        <div class="media-link">
+          <a href="https://ocw.mit.edu/" target="_blank">MIT OpenCourseWare</a>
+          <p>Free MIT course materials</p>
+        </div>
+        <div class="media-link">
+          <a href="https://www.duolingo.com/" target="_blank">Duolingo</a>
+          <p>Free language learning</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="disclaimer">
+      Disclaimer: This page does not host any content and simply provides links to external resources. 
+      The listed resources are believed to be legitimate free services, but please review each site's terms of service before use.
+      © 2025 soulioli.com. All rights reserved.
+    </p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
