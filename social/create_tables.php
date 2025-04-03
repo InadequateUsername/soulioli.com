@@ -1,8 +1,12 @@
 <?php
 // create_tables.php - Run this once to create necessary tables
 
-// Connect to database
-require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db_connect.php';
+// Connect to database using standardized approach
+require_once $_SERVER['DOCUMENT_ROOT'] . '/scripts/database.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/scripts/session.php';
+
+// Get database connection
+$conn = get_db_connection();
 
 // Create social_posts table
 $sql = "CREATE TABLE IF NOT EXISTS social_posts (
@@ -17,7 +21,8 @@ $sql = "CREATE TABLE IF NOT EXISTS social_posts (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 )";
 
-if ($conn->query($sql) === TRUE) {
+$stmt = db_query($sql);
+if ($stmt !== false) {
     echo "social_posts table created successfully<br>";
 } else {
     echo "Error creating social_posts table: " . $conn->error . "<br>";
@@ -34,7 +39,8 @@ $sql = "CREATE TABLE IF NOT EXISTS likes (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 )";
 
-if ($conn->query($sql) === TRUE) {
+$stmt = db_query($sql);
+if ($stmt !== false) {
     echo "likes table created successfully<br>";
 } else {
     echo "Error creating likes table: " . $conn->error . "<br>";
@@ -52,7 +58,8 @@ $sql = "CREATE TABLE IF NOT EXISTS comments (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 )";
 
-if ($conn->query($sql) === TRUE) {
+$stmt = db_query($sql);
+if ($stmt !== false) {
     echo "comments table created successfully<br>";
 } else {
     echo "Error creating comments table: " . $conn->error . "<br>";

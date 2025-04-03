@@ -2629,3 +2629,33 @@ Stack trace:
 )
 
 [03-Apr-2025 12:03:30 UTC] check_login.php - User is NOT logged in
+[03-Apr-2025 12:18:56 UTC] check_login.php - Session data: Array
+(
+    [loggedin] => 1
+    [username] => Soul
+    [user_id] => 1
+)
+
+[03-Apr-2025 12:18:56 UTC] check_login.php - User is logged in: Soul
+[03-Apr-2025 12:18:57 UTC] check_login.php - Session data: Array
+(
+)
+
+[03-Apr-2025 12:18:57 UTC] check_login.php - User is NOT logged in
+[03-Apr-2025 12:19:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function db_query() in /home/soulioli/public_html/register.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/soulioli/public_html/register.php on line 19
+[03-Apr-2025 12:24:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function db_query() in /home/soulioli/public_html/register.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/soulioli/public_html/register.php on line 19
+[03-Apr-2025 12:24:02 UTC] check_login.php - Session data: Array
+(
+)
+
+[03-Apr-2025 12:24:02 UTC] check_login.php - User is NOT logged in
+[03-Apr-2025 12:24:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function db_query() in /home/soulioli/public_html/register.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/soulioli/public_html/register.php on line 19

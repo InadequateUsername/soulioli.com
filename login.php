@@ -75,7 +75,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $sql = "SELECT id, username, password FROM users WHERE username = ?";
         debug_log("SQL query: $sql");
         
-        if($stmt = mysqli_prepare($conn, $sql)){
+        $stmt = db_query($sql, "s", [$param_username]);
+        if($stmt !== false){
             debug_log("SQL statement prepared successfully");
             
             // Bind variables to the prepared statement as parameters

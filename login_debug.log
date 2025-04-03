@@ -1498,3 +1498,19 @@
 )
 
 [2025-04-03 12:03:11] About to redirect to home page
+[2025-04-03 12:18:58] Login page accessed
+[2025-04-03 12:18:58] SESSION at start: Array
+(
+)
+
+[2025-04-03 12:18:58] Database connection: SUCCESS
+[2025-04-03 12:18:58] Rendering login form
+[2025-04-03 12:18:58] Login page fully rendered
+[2025-04-03 12:24:04] Login page accessed
+[2025-04-03 12:24:04] SESSION at start: Array
+(
+)
+
+[2025-04-03 12:24:04] Database connection: SUCCESS
+[2025-04-03 12:24:04] Rendering login form
+[2025-04-03 12:24:04] Login page fully rendered
