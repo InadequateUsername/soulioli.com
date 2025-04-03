@@ -1,21 +1,44 @@
-// Check login status (from your original script)
+// Enhanced script for Free Media page
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Check login status
+  checkLoginStatus();
+  
+  // Set up navigation
+  setupNavigation();
+  
+  // Add sparkle effects to warning boxes
+  addSparkleEffects();
+  
+  // Add smooth scrolling
+  setupSmoothScrolling();
+  
+  // Add "Back to Top" button
+  addBackToTopButton();
+});
+
+/**
+ * Check login status and update user status display
+ */
 function checkLoginStatus() {
   fetch('/check_login.php')
     .then(response => response.json())
     .then(data => {
       const userStatusElement = document.getElementById('user-status');
       
-      if (data.loggedin) {
-        // User is logged in - display username and logout link
-        userStatusElement.innerHTML = `
-          <span><i class="fas fa-user"></i> ${data.username}</span>
-          <a href="/logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
-        `;
-      } else {
-        // User is not logged in - display login link
-        userStatusElement.innerHTML = `
-          <a href="/login.php"><i class="fas fa-sign-in-alt"></i> Login / Register</a>
-        `;
+      if (userStatusElement) {
+        if (data.loggedin) {
+          // User is logged in - display username and logout link
+          userStatusElement.innerHTML = `
+            <span><i class="fas fa-user"></i> ${data.username}</span>
+            <a href="/logout.php" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+          `;
+        } else {
+          // User is not logged in - display login link
+          userStatusElement.innerHTML = `
+            <a href="/login.php" class="home-link"><i class="fas fa-sign-in-alt"></i> Login / Register</a>
+          `;
+        }
       }
     })
     .catch(error => {
@@ -23,151 +46,150 @@ function checkLoginStatus() {
     });
 }
 
-// Add smooth scrolling to section links
-function addSmoothScrolling() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+/**
+ * Set up navigation functionality
+ */
+function setupNavigation() {
+  const navItems = document.querySelectorAll('.nav-item');
+  const contentSections = document.querySelectorAll('.content-section');
+  const currentSectionLabel = document.getElementById('current-section');
+  
+  // Handle navigation item clicks
+  navItems.forEach(item => {
+    item.addEventListener('click', function() {
+      // Remove active class from all nav items
+      navItems.forEach(navItem => {
+        navItem.classList.remove('active');
+      });
+      
+      // Add active class to clicked nav item
+      this.classList.add('active');
+      
+      // Get the target section
+      const targetId = this.getAttribute('data-target');
+      
+      // Hide all content sections
+      contentSections.forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      // Show the target section
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.classList.add('active');
+        
+        // Update the breadcrumb
+        if (currentSectionLabel) {
+          currentSectionLabel.textContent = this.textContent.trim();
+        }
+        
+        // Update the right panel quick links
+        updateQuickLinks(targetId);
+      }
+    });
+  });
+  
+  // Setup right panel quick links
+  setupQuickLinks();
+}
+
+/**
+ * Update quick links in the right panel based on active section
+ */
+function updateQuickLinks(sectionId) {
+  const quickLinks = document.getElementById('page-sections');
+  
+  if (!quickLinks) return;
+  
+  // Clear existing links
+  quickLinks.innerHTML = '';
+  
+  // Add section specific links
+  switch(sectionId) {
+    case 'streaming-sites':
+      quickLinks.innerHTML = `
+        <li class="active"><a href="#streaming-sites">Streaming Sites</a></li>
+        <li><a href="#free-with-ads">Free w/ Ads</a></li>
+        <li><a href="#anime-streaming">Anime Streaming</a></li>
+        <li><a href="#cartoon-streaming">Cartoon Streaming</a></li>
+        <li><a href="#tv-streaming">TV Streaming</a></li>
+      `;
+      break;
+    case 'music-audio':
+      quickLinks.innerHTML = `
+        <li class="active"><a href="#music-streaming">Music Streaming</a></li>
+        <li><a href="#podcasts">Podcasts</a></li>
+        <li><a href="#music-downloads">Music Downloads</a></li>
+        <li><a href="#audio-tools">Audio Tools</a></li>
+      `;
+      break;
+    case 'books-reading':
+      quickLinks.innerHTML = `
+        <li class="active"><a href="#ebooks">E-Books</a></li>
+        <li><a href="#audiobooks">Audiobooks</a></li>
+        <li><a href="#academic-resources">Academic Resources</a></li>
+        <li><a href="#reading-tools">Reading Tools</a></li>
+      `;
+      break;
+    case 'educational':
+      quickLinks.innerHTML = `
+        <li class="active"><a href="#online-courses">Online Courses</a></li>
+        <li><a href="#educational-videos">Educational Videos</a></li>
+        <li><a href="#language-learning">Language Learning</a></li>
+        <li><a href="#tutorials">Tutorials</a></li>
+      `;
+      break;
+    // Add more sections as needed
+    default:
+      quickLinks.innerHTML = `
+        <li class="active"><a href="#${sectionId}">${sectionId.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}</a></li>
+      `;
+  }
+}
+
+/**
+ * Set up quick links in the right panel
+ */
+function setupQuickLinks() {
+  const quickLinks = document.getElementById('page-sections');
+  
+  if (!quickLinks) return;
+  
+  // Add click event listeners to quick links
+  quickLinks.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
       e.preventDefault();
       
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+      // Remove active class from all links
+      document.querySelectorAll('#page-sections li').forEach(li => {
+        li.classList.remove('active');
+      });
+      
+      // Add active class to clicked link's parent
+      e.target.parentElement.classList.add('active');
+      
+      // Scroll to the target section
+      const targetId = e.target.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
       }
-    });
-  });
-}
-
-// Add hover effects to media links
-function addHoverEffects() {
-  const mediaLinks = document.querySelectorAll('.media-link');
-  
-  mediaLinks.forEach(link => {
-    link.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-8px)';
-      this.style.boxShadow = '0 15px 30px rgba(187, 134, 252, 0.3)';
-    });
-    
-    link.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateY(0)';
-      this.style.boxShadow = 'none';
-    });
-  });
-}
-
-// Add a "back to top" button
-function addBackToTopButton() {
-  const button = document.createElement('button');
-  button.innerHTML = '<i class="fas fa-arrow-up"></i>';
-  button.className = 'back-to-top';
-  button.style.position = 'fixed';
-  button.style.bottom = '20px';
-  button.style.right = '20px';
-  button.style.display = 'none';
-  button.style.padding = '12px 16px';
-  button.style.backgroundColor = '#bb86fc';
-  button.style.color = '#121212';
-  button.style.border = 'none';
-  button.style.borderRadius = '50%';
-  button.style.cursor = 'pointer';
-  button.style.zIndex = '1000';
-  button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
-  
-  document.body.appendChild(button);
-  
-  window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 300) {
-      button.style.display = 'block';
-    } else {
-      button.style.display = 'none';
     }
   });
-  
-  button.addEventListener('click', function() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
 }
 
-// Add category animation on scroll
-function addScrollAnimation() {
-  const categories = document.querySelectorAll('.category');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  categories.forEach(category => {
-    category.style.opacity = 0;
-    category.style.transform = 'translateY(50px)';
-    category.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(category);
-  });
-}
-
-// Add night mode toggle
-function addNightModeToggle() {
-  const navContainer = document.querySelector('.nav-container');
-  
-  const nightModeToggle = document.createElement('button');
-  nightModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-  nightModeToggle.className = 'night-mode-toggle';
-  nightModeToggle.style.backgroundColor = 'transparent';
-  nightModeToggle.style.border = '1px solid #bb86fc';
-  nightModeToggle.style.borderRadius = '50%';
-  nightModeToggle.style.color = '#bb86fc';
-  nightModeToggle.style.width = '40px';
-  nightModeToggle.style.height = '40px';
-  nightModeToggle.style.cursor = 'pointer';
-  nightModeToggle.style.marginLeft = '15px';
-  
-  nightModeToggle.addEventListener('click', function() {
-    document.body.classList.toggle('light-mode');
-    
-    if (document.body.classList.contains('light-mode')) {
-      this.innerHTML = '<i class="fas fa-sun"></i>';
-    } else {
-      this.innerHTML = '<i class="fas fa-moon"></i>';
-    }
-  });
-  
-  navContainer.appendChild(nightModeToggle);
-}
-
-// Initialize all features when the DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  checkLoginStatus();
-  addSmoothScrolling();
-  addHoverEffects();
-  addBackToTopButton();
-  addScrollAnimation();
-  
-  // Uncomment if you want the night mode toggle
-  // addNightModeToggle();
-});
-
-// Add sparkle effect to warning boxes
-function addSparkleToWarning() {
+/**
+ * Add sparkle effects to warning boxes
+ */
+function addSparkleEffects() {
   const warningBoxes = document.querySelectorAll('.warning-box');
   
   warningBoxes.forEach(box => {
+    // Add multiple sparkles
     for (let i = 0; i < 5; i++) {
       const sparkle = document.createElement('div');
       sparkle.className = 'sparkle';
-      sparkle.style.position = 'absolute';
-      sparkle.style.width = '4px';
-      sparkle.style.height = '4px';
-      sparkle.style.backgroundColor = '#ffcc00';
-      sparkle.style.borderRadius = '50%';
       
       // Random position within the box
       const top = Math.random() * 100;
@@ -179,26 +201,87 @@ function addSparkleToWarning() {
       const delay = Math.random() * 3;
       sparkle.style.animation = `sparkle 2s infinite ${delay}s`;
       
-      box.style.position = 'relative';
-      box.style.overflow = 'hidden';
+      // Add to the box
       box.appendChild(sparkle);
     }
   });
-  
-  // Add keyframe animation to stylesheet
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes sparkle {
-      0% { transform: scale(1); opacity: 0; }
-      50% { transform: scale(2); opacity: 1; }
-      100% { transform: scale(1); opacity: 0; }
-    }
-  `;
-  document.head.appendChild(style);
 }
 
-// Call this function after DOM loaded
-document.addEventListener('DOMContentLoaded', function() {
-  // Add this with other initializations
-  addSparkleToWarning();
-});
+/**
+ * Set up smooth scrolling for anchor links
+ */
+function setupSmoothScrolling() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+}
+
+/**
+ * Add "Back to Top" button
+ */
+function addBackToTopButton() {
+  // Create button element
+  const button = document.createElement('button');
+  button.innerHTML = '<i class="fas fa-arrow-up"></i>';
+  button.className = 'back-to-top';
+  
+  // Style the button
+  button.style.position = 'fixed';
+  button.style.bottom = '20px';
+  button.style.right = '20px';
+  button.style.display = 'none';
+  button.style.width = '50px';
+  button.style.height = '50px';
+  button.style.borderRadius = '50%';
+  button.style.backgroundColor = '#bb86fc';
+  button.style.color = '#121212';
+  button.style.border = 'none';
+  button.style.cursor = 'pointer';
+  button.style.fontSize = '18px';
+  button.style.boxShadow = '0 4px 10px rgba(0,0,0,0.3)';
+  button.style.zIndex = '1000';
+  button.style.transition = 'all 0.3s';
+  
+  // Add hover effect
+  button.addEventListener('mouseenter', function() {
+    this.style.transform = 'scale(1.1)';
+    this.style.boxShadow = '0 6px 15px rgba(0,0,0,0.4)';
+  });
+  
+  button.addEventListener('mouseleave', function() {
+    this.style.transform = 'scale(1)';
+    this.style.boxShadow = '0 4px 10px rgba(0,0,0,0.3)';
+  });
+  
+  // Add to the document
+  document.body.appendChild(button);
+  
+  // Show/hide button based on scroll position
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+      button.style.display = 'block';
+    } else {
+      button.style.display = 'none';
+    }
+  });
+  
+  // Scroll to top when clicked
+  button.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}

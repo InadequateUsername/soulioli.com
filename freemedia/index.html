@@ -4,181 +4,250 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/images/soul_society_logo.png" type="image/x-icon">
-  <title>Free Resources</title>
+  <title>Free Media Resources</title>
   <link rel="stylesheet" href="style.css">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <div class="container">
-    <div class="nav-container">
-      <a href="/" class="home-link"><i class="fas fa-home"></i> Home</a>
-      <div id="user-status"></div>
-      <a href="/mediatracker/" class="other-link"><i class="fas fa-tv"></i> Media Tracker</a>
-    </div>
-
-    <header>
-      <h1>Free Resources</h1>
-      <p>A curated collection of free and legal media resources for the ultimate couch potato experience</p>
-    </header>
-
-    <div class="warning-box">
-      <strong><i class="fas fa-exclamation-triangle"></i> IMPORTANT:</strong> Please use an ad-blocker before clicking on any of the links below to avoid ads/popups!
-    </div>
-
-    <div class="section-title">
-      <i class="fas fa-film"></i> MOVIES & SHOWS <i class="fas fa-tv"></i>
-    </div>
-
-    <div class="category">
-      <h2><i class="fas fa-video"></i> Video Streaming</h2>
-      <div class="link-grid">
-        <div class="media-link">
-          <a href="https://www.pluto.tv/" target="_blank">Pluto TV</a>
-          <p>Free live TV channels and on-demand movies</p>
-        </div>
-        <div class="media-link">
-          <a href="https://tubitv.com/" target="_blank">Tubi</a>
-          <p>Free movies and TV shows with ads</p>
-        </div>
-        <div class="media-link">
-          <a href="https://www.crackle.com/" target="_blank">Crackle</a>
-          <p>Free movies and TV shows library</p>
-        </div>
-        <div class="media-link">
-          <a href="https://www.pbs.org/video/" target="_blank">PBS Video</a>
-          <p>Free documentaries and educational content</p>
-        </div>
-        <div class="media-link">
-          <a href="https://www.peacocktv.com/" target="_blank">Peacock (Free Tier)</a>
-          <p>NBCUniversal's free streaming service</p>
-        </div>
-        <div class="media-link">
-          <a href="https://www.roku.com/the-roku-channel" target="_blank">The Roku Channel</a>
-          <p>Free movies and TV shows (no Roku device needed)</p>
-        </div>
+  <div class="app-container">
+    <!-- Left Navigation Panel -->
+    <div class="nav-sidebar">
+      <div class="site-logo">
+        <h3><i class="fas fa-photo-video"></i> Free Media</h3>
+      </div>
+      
+      <div class="nav-section">
+        <div class="section-title">Main Categories</div>
+        <ul class="nav-links">
+          <li class="nav-item active" data-target="streaming-sites">
+            <i class="fas fa-play-circle"></i> Streaming Sites
+          </li>
+          <li class="nav-item" data-target="music-audio">
+            <i class="fas fa-music"></i> Music & Audio
+          </li>
+          <li class="nav-item" data-target="books-reading">
+            <i class="fas fa-book"></i> Books & Reading
+          </li>
+          <li class="nav-item" data-target="educational">
+            <i class="fas fa-graduation-cap"></i> Educational
+          </li>
+        </ul>
+      </div>
+      
+      <div class="nav-section">
+        <div class="section-title">Media Types</div>
+        <ul class="nav-links">
+          <li class="nav-item" data-target="movies-tv">
+            <i class="fas fa-film"></i> Movies & TV
+          </li>
+          <li class="nav-item" data-target="anime-streaming">
+            <i class="fas fa-dragon"></i> Anime Streaming
+          </li>
+          <li class="nav-item" data-target="cartoon-streaming">
+            <i class="fas fa-child"></i> Cartoon Streaming
+          </li>
+          <li class="nav-item" data-target="live-sports">
+            <i class="fas fa-football-ball"></i> Live Sports
+          </li>
+        </ul>
+      </div>
+      
+      <div class="nav-section">
+        <div class="section-title">Utilities</div>
+        <ul class="nav-links">
+          <li class="nav-item" data-target="iptv-tools">
+            <i class="fas fa-tools"></i> IPTV Tools
+          </li>
+          <li class="nav-item" data-target="smart-tv">
+            <i class="fas fa-tv"></i> Smart TV/Firestick
+          </li>
+          <li class="nav-item" data-target="android-streaming">
+            <i class="fab fa-android"></i> Android Streaming
+          </li>
+        </ul>
+      </div>
+      
+      <div class="home-link-container">
+        <a href="/" class="home-link"><i class="fas fa-home"></i> Back to Home</a>
       </div>
     </div>
-
-    <div class="section-title">
-      <i class="fas fa-music"></i> MUSIC & AUDIO <i class="fas fa-headphones"></i>
-    </div>
-
-    <div class="category">
-      <h2><i class="fas fa-music"></i> Music & Audio Streaming</h2>
-      <div class="link-grid">
-        <div class="media-link">
-          <a href="https://www.spotify.com/" target="_blank">Spotify (Free)</a>
-          <p>Free music streaming with ads</p>
+    
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <div class="top-bar">
+        <div class="user-status" id="user-status">
+          <!-- This will be populated by JavaScript -->
         </div>
-        <div class="media-link">
-          <a href="https://soundcloud.com/" target="_blank">SoundCloud</a>
-          <p>Free music, podcasts, and user-generated content</p>
-        </div>
-        <div class="media-link">
-          <a href="https://freemusicarchive.org/" target="_blank">Free Music Archive</a>
-          <p>Free, legal audio downloads</p>
-        </div>
-        <div class="media-link">
-          <a href="https://www.jamendo.com/" target="_blank">Jamendo</a>
-          <p>Free music downloads from independent artists</p>
-        </div>
-        <div class="media-link">
-          <a href="https://archive.org/details/audio" target="_blank">Internet Archive Audio</a>
-          <p>Public domain audio files</p>
-        </div>
-        <div class="media-link">
-          <a href="https://www.npr.org/podcasts/" target="_blank">NPR Podcasts</a>
-          <p>Free podcasts on various topics</p>
+        <div class="breadcrumb">
+          <span><i class="fas fa-photo-video"></i> Free Media</span>
+          <span class="separator">/</span>
+          <span id="current-section">Streaming Sites</span>
         </div>
       </div>
-    </div>
-
-    <div class="section-title">
-      <i class="fas fa-book"></i> BOOKS & READING <i class="fas fa-bookmark"></i>
-    </div>
-
-    <div class="category">
-      <h2><i class="fas fa-book-open"></i> Books & Reading Resources</h2>
-      <div class="link-grid">
-        <div class="media-link">
-          <a href="https://www.gutenberg.org/" target="_blank">Project Gutenberg</a>
-          <p>Free public domain ebooks</p>
+      
+      <!-- Content sections - only one will be visible at a time -->
+      <div class="content-section active" id="streaming-sites">
+        <h2><i class="fas fa-play-circle"></i> Streaming Sites</h2>
+        <div class="warning-box">
+          <strong><i class="fas fa-exclamation-triangle"></i> IMPORTANT:</strong> Please use an ad-blocker before clicking on any of the links below to avoid ads/popups!
         </div>
-        <div class="media-link">
-          <a href="https://www.overdrive.com/apps/libby/" target="_blank">Libby</a>
-          <p>Free ebooks and audiobooks with library card</p>
-        </div>
-        <div class="media-link">
-          <a href="https://openlibrary.org/" target="_blank">Open Library</a>
-          <p>Free ebooks to borrow</p>
-        </div>
-        <div class="media-link">
-          <a href="https://manybooks.net/" target="_blank">ManyBooks</a>
-          <p>Free and discounted ebooks</p>
-        </div>
-        <div class="media-link">
-          <a href="https://www.wattpad.com/" target="_blank">Wattpad</a>
-          <p>Free stories from amateur and professional writers</p>
-        </div>
-        <div class="media-link">
-          <a href="https://standardebooks.org/" target="_blank">Standard Ebooks</a>
-          <p>Professional-quality, free public domain ebooks</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-title">
-      <i class="fas fa-graduation-cap"></i> EDUCATIONAL CONTENT <i class="fas fa-chalkboard-teacher"></i>
-    </div>
-
-    <div class="category">
-      <h2><i class="fas fa-brain"></i> Educational Resources</h2>
-      <div class="link-grid">
-        <div class="media-link">
-          <a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a>
-          <p>Free educational courses on various subjects</p>
-        </div>
-        <div class="media-link">
-          <a href="https://www.coursera.org/courses?query=free" target="_blank">Coursera (Free Courses)</a>
-          <p>Free online courses from universities</p>
-        </div>
-        <div class="media-link">
-          <a href="https://www.edx.org/search?tab=course" target="_blank">edX (Free Courses)</a>
-          <p>Free courses from top educational institutions</p>
-        </div>
-        <div class="media-link">
-          <a href="https://www.ted.com/" target="_blank">TED Talks</a>
-          <p>Free educational and inspirational talks</p>
-        </div>
-        <div class="media-link">
-          <a href="https://ocw.mit.edu/" target="_blank">MIT OpenCourseWare</a>
-          <p>Free MIT course materials</p>
-        </div>
-        <div class="media-link">
-          <a href="https://www.duolingo.com/" target="_blank">Duolingo</a>
-          <p>Free language learning</p>
+        
+        <div class="grid-container">
+          <div class="media-link">
+            <a href="https://www.pluto.tv/" target="_blank">Pluto TV</a>
+            <p>Free live TV channels and on-demand movies</p>
+          </div>
+          <div class="media-link">
+            <a href="https://tubitv.com/" target="_blank">Tubi</a>
+            <p>Free movies and TV shows with ads</p>
+          </div>
+          <div class="media-link">
+            <a href="https://www.crackle.com/" target="_blank">Crackle</a>
+            <p>Free movies and TV shows library</p>
+          </div>
+          <div class="media-link">
+            <a href="https://www.pbs.org/video/" target="_blank">PBS Video</a>
+            <p>Free documentaries and educational content</p>
+          </div>
+          <div class="media-link">
+            <a href="https://www.peacocktv.com/" target="_blank">Peacock (Free Tier)</a>
+            <p>NBCUniversal's free streaming service</p>
+          </div>
+          <div class="media-link">
+            <a href="https://www.roku.com/the-roku-channel" target="_blank">The Roku Channel</a>
+            <p>Free movies and TV shows (no Roku device needed)</p>
+          </div>
         </div>
       </div>
+      
+      <div class="content-section" id="music-audio">
+        <h2><i class="fas fa-music"></i> Music & Audio Streaming</h2>
+        <div class="warning-box">
+          <strong><i class="fas fa-exclamation-triangle"></i> IMPORTANT:</strong> Some services may offer premium features for a fee. The links below provide free access with limited features.
+        </div>
+        
+        <div class="grid-container">
+          <div class="media-link">
+            <a href="https://www.spotify.com/" target="_blank">Spotify (Free)</a>
+            <p>Free music streaming with ads</p>
+          </div>
+          <div class="media-link">
+            <a href="https://soundcloud.com/" target="_blank">SoundCloud</a>
+            <p>Free music, podcasts, and user-generated content</p>
+          </div>
+          <div class="media-link">
+            <a href="https://freemusicarchive.org/" target="_blank">Free Music Archive</a>
+            <p>Free, legal audio downloads</p>
+          </div>
+          <div class="media-link">
+            <a href="https://www.jamendo.com/" target="_blank">Jamendo</a>
+            <p>Free music downloads from independent artists</p>
+          </div>
+          <div class="media-link">
+            <a href="https://archive.org/details/audio" target="_blank">Internet Archive Audio</a>
+            <p>Public domain audio files</p>
+          </div>
+          <div class="media-link">
+            <a href="https://www.npr.org/podcasts/" target="_blank">NPR Podcasts</a>
+            <p>Free podcasts on various topics</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- More content sections go here... -->
+      <div class="content-section" id="books-reading">
+        <h2><i class="fas fa-book"></i> Books & Reading Resources</h2>
+        <div class="grid-container">
+          <div class="media-link">
+            <a href="https://www.gutenberg.org/" target="_blank">Project Gutenberg</a>
+            <p>Free public domain ebooks</p>
+          </div>
+          <div class="media-link">
+            <a href="https://www.overdrive.com/apps/libby/" target="_blank">Libby</a>
+            <p>Free ebooks and audiobooks with library card</p>
+          </div>
+          <div class="media-link">
+            <a href="https://openlibrary.org/" target="_blank">Open Library</a>
+            <p>Free ebooks to borrow</p>
+          </div>
+          <!-- Add more as needed -->
+        </div>
+      </div>
+
+      <!-- Continue with other sections - just adding placeholders -->
+      <div class="content-section" id="educational">
+        <h2><i class="fas fa-graduation-cap"></i> Educational Resources</h2>
+        <!-- Content here -->
+      </div>
+      
+      <div class="content-section" id="movies-tv">
+        <h2><i class="fas fa-film"></i> Movies & TV</h2>
+        <!-- Content here -->
+      </div>
+      
+      <div class="content-section" id="anime-streaming">
+        <h2><i class="fas fa-dragon"></i> Anime Streaming</h2>
+        <!-- Content here -->
+      </div>
+      
+      <div class="content-section" id="cartoon-streaming">
+        <h2><i class="fas fa-child"></i> Cartoon Streaming</h2>
+        <!-- Content here -->
+      </div>
+      
+      <div class="content-section" id="live-sports">
+        <h2><i class="fas fa-football-ball"></i> Live Sports</h2>
+        <!-- Content here -->
+      </div>
+      
+      <div class="content-section" id="iptv-tools">
+        <h2><i class="fas fa-tools"></i> IPTV Tools</h2>
+        <!-- Content here -->
+      </div>
+      
+      <div class="content-section" id="smart-tv">
+        <h2><i class="fas fa-tv"></i> Smart TV/Firestick</h2>
+        <!-- Content here -->
+      </div>
+      
+      <div class="content-section" id="android-streaming">
+        <h2><i class="fab fa-android"></i> Android Streaming</h2>
+        <!-- Content here -->
+      </div>
     </div>
-
-    <div class="warning-box" style="margin-top: 30px;">
-      <strong><i class="fas fa-shield-alt"></i> PRIVACY TIP:</strong> Consider using a VPN for additional privacy when browsing online content!
+    
+    <!-- Right Info Panel -->
+    <div class="info-panel">
+      <div class="panel-section">
+        <h3>On This Page</h3>
+        <ul class="quick-links" id="page-sections">
+          <li class="active"><a href="#streaming-sites">Streaming Sites</a></li>
+          <li><a href="#free-with-ads">Free w/ Ads</a></li>
+          <li><a href="#anime-streaming">Anime Streaming</a></li>
+          <li><a href="#cartoon-streaming">Cartoon Streaming</a></li>
+          <li><a href="#tv-streaming">TV Streaming</a></li>
+        </ul>
+      </div>
+      
+      <div class="panel-section">
+        <h3>Tips & Resources</h3>
+        <div class="tip-box">
+          <p><i class="fas fa-shield-alt"></i> For safer browsing, use a VPN and ad-blocker.</p>
+        </div>
+        <div class="tip-box">
+          <p><i class="fas fa-info-circle"></i> Content availability may vary by region.</p>
+        </div>
+      </div>
+      
+      <div class="dmca-section">
+        <a href="/dmca/" class="footer-link">
+          <i class="fas fa-copyright"></i> DMCA & Copyright Information
+        </a>
+      </div>
     </div>
+  </div>
 
-    <div class="dmca-section" style="text-align: center; margin: 30px 0 20px 0;">
-      <a href="/dmca/" style="color: #bb86fc; text-decoration: none; border: 1px solid #bb86fc; padding: 10px 20px; border-radius: 20px; display: inline-block; transition: all 0.3s;">
-        <i class="fas fa-copyright"></i> DMCA & Copyright Information
-      </a>
-    </div>
-
-    <p class="disclaimer" style="text-align: center; font-size: 0.8em; color: #888; margin-top: 40px;">
-      Disclaimer: This page does not host any content and simply provides links to external resources. 
-      The listed resources are believed to be legitimate free services, but please review each site's terms of service before use.
-      <br><br>
-      © 2025 soulioli.com. All rights reserved.
-    </p>
-
-  <script src="script.js"></script>
+  <script src="enhanced-script.js"></script>
 </body>
 </html>
