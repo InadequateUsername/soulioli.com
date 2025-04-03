@@ -1,8 +1,4 @@
 <?php
-// add_comment.php - Add a comment to a post
-
-session_start();
-
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
     echo json_encode(['success' => false, 'message' => 'You must be logged in to comment.']);

@@ -1,9 +1,4 @@
 <?php
-// Initialize the session (only if not already started)
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
 // Add error handling to prevent PHP notices/warnings from breaking JSON
 error_reporting(E_ERROR);
 ini_set('display_errors', 0);
