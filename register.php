@@ -1,7 +1,6 @@
 <?php
 // Include config file
 require_once "config.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . '/scripts/database.php';
 
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = $email = "";
@@ -17,8 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE username = ?";
         
-        $stmt = db_query($sql, "s", [$param_username]);
-        if($stmt !== false){
+        if($stmt = mysqli_prepare($conn, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_username);
             
@@ -51,8 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE email = ?";
         
-        $stmt = db_query($sql, "s", [$param_username]);
-        if($stmt !== false){
+        if($stmt = mysqli_prepare($conn, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_email);
             
@@ -103,8 +100,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Prepare an insert statement
         $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
          
-        $stmt = db_query($sql, "s", [$param_username]);
-        if($stmt !== false){
+        if($stmt = mysqli_prepare($conn, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_email, $param_password);
             
