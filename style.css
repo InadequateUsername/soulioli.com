@@ -463,4 +463,55 @@ footer, .disclaimer {
   .card {
     padding: 15px;
   }
+
+
+  /* Enhanced button styles for filter buttons */
+.filter-btn, 
+button[type="button"],
+.btn-category {
+  background-color: rgba(30, 30, 30, 0.7);
+  border: 1px solid rgba(187, 134, 252, 0.3);
+  border-radius: 20px;
+  color: #e0e0e0;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 5px;
+}
+
+.filter-btn:hover, 
+button[type="button"]:hover,
+.btn-category:hover {
+  background-color: rgba(45, 45, 45, 0.9);
+  border-color: rgba(187, 134, 252, 0.7);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.filter-btn.active,
+button[type="button"].active,
+.btn-category.active {
+  background-color: rgba(187, 134, 252, 0.3);
+  border-color: rgba(187, 134, 252, 0.9);
+  color: #bb86fc;
+}
+
+/* Add glow effect for active state */
+.filter-btn.active:hover,
+button[type="button"].active:hover,
+.btn-category.active:hover {
+  box-shadow: 0 0 15px rgba(187, 134, 252, 0.5);
+}
+
+/* Ensure icons are properly aligned */
+.filter-btn i, 
+button[type="button"] i,
+.btn-category i {
+  margin-right: 5px;
+}
 }

@@ -139,6 +139,14 @@ function updateQuickLinks(sectionId) {
         <li><a href="#tutorials">Tutorials</a></li>
       `;
       break;
+    case 'sailors-guide':
+      quickLinks.innerHTML = `
+        <li class="active"><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#website-navigation">Website Navigation</a></li>
+        <li><a href="#streaming-terms">Streaming Terms</a></li>
+        <li><a href="#beginner-resources">Beginner Resources</a></li>
+      `;
+  break;
     // Add more sections as needed
     default:
       quickLinks.innerHTML = `
@@ -211,18 +219,27 @@ function addSparkleEffects() {
  * Set up smooth scrolling for anchor links
  */
 function setupSmoothScrolling() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  // Select all links in the right sidebar that begin with '#'
+  document.querySelectorAll('.info-panel a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
       
+      // Get the target section ID from the href attribute
       const targetId = this.getAttribute('href').substring(1);
       const targetElement = document.getElementById(targetId);
       
       if (targetElement) {
+        // Scroll to the target section smoothly
         targetElement.scrollIntoView({
           behavior: 'smooth',
           block: 'start'
         });
+        
+        // Update active state in the sidebar
+        document.querySelectorAll('.info-panel .quick-links li').forEach(li => {
+          li.classList.remove('active');
+        });
+        this.closest('li').classList.add('active');
       }
     });
   });
