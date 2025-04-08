@@ -1,7 +1,24 @@
-// Global JavaScript for soulioli.com
+// Enhanced script for Free Media page
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Check login status
+  checkLoginStatus();
+  
+  // Set up navigation
+  setupNavigation();
+  
+  // Add sparkle effects to warning boxes
+  addSparkleEffects();
+  
+  // Add smooth scrolling
+  setupSmoothScrolling();
+  
+  // Add "Back to Top" button
+  addBackToTopButton();
+});
 
 /**
- * Check login status and update the user status display
+ * Check login status and update user status display
  */
 function checkLoginStatus() {
   fetch('/check_login.php')
@@ -30,10 +47,209 @@ function checkLoginStatus() {
 }
 
 /**
+ * Set up navigation functionality
+ */
+function setupNavigation() {
+  const navItems = document.querySelectorAll('.nav-item');
+  const contentSections = document.querySelectorAll('.content-section');
+  const currentSectionLabel = document.getElementById('current-section');
+  
+  // Handle navigation item clicks
+  navItems.forEach(item => {
+    item.addEventListener('click', function() {
+      // Remove active class from all nav items
+      navItems.forEach(navItem => {
+        navItem.classList.remove('active');
+      });
+      
+      // Add active class to clicked nav item
+      this.classList.add('active');
+      
+      // Get the target section
+      const targetId = this.getAttribute('data-target');
+      
+      // Hide all content sections
+      contentSections.forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      // Show the target section
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.classList.add('active');
+        
+        // Update the breadcrumb
+        if (currentSectionLabel) {
+          currentSectionLabel.textContent = this.textContent.trim();
+        }
+        
+        // Update the right panel quick links
+        updateQuickLinks(targetId);
+      }
+    });
+  });
+  
+  // Setup right panel quick links
+  setupQuickLinks();
+}
+
+/**
+ * Update quick links in the right panel based on active section
+ */
+function updateQuickLinks(sectionId) {
+  const quickLinks = document.getElementById('page-sections');
+  
+  if (!quickLinks) return;
+  
+  // Clear existing links
+  quickLinks.innerHTML = '';
+  
+  // Add section specific links
+  switch(sectionId) {
+    case 'streaming-sites':
+      quickLinks.innerHTML = `
+        <li class="active"><a href="#streaming-sites">Streaming Sites</a></li>
+        <li><a href="#free-with-ads">Free w/ Ads</a></li>
+        <li><a href="#anime-streaming">Anime Streaming</a></li>
+        <li><a href="#cartoon-streaming">Cartoon Streaming</a></li>
+        <li><a href="#tv-streaming">TV Streaming</a></li>
+      `;
+      break;
+    case 'music-audio':
+      quickLinks.innerHTML = `
+        <li class="active"><a href="#music-streaming">Music Streaming</a></li>
+        <li><a href="#podcasts">Podcasts</a></li>
+        <li><a href="#music-downloads">Music Downloads</a></li>
+        <li><a href="#audio-tools">Audio Tools</a></li>
+      `;
+      break;
+    case 'books-reading':
+      quickLinks.innerHTML = `
+        <li class="active"><a href="#ebooks">E-Books</a></li>
+        <li><a href="#audiobooks">Audiobooks</a></li>
+        <li><a href="#academic-resources">Academic Resources</a></li>
+        <li><a href="#reading-tools">Reading Tools</a></li>
+      `;
+      break;
+    case 'educational':
+      quickLinks.innerHTML = `
+        <li class="active"><a href="#online-courses">Online Courses</a></li>
+        <li><a href="#educational-videos">Educational Videos</a></li>
+        <li><a href="#language-learning">Language Learning</a></li>
+        <li><a href="#tutorials">Tutorials</a></li>
+      `;
+      break;
+    case 'sailors-guide':
+      quickLinks.innerHTML = `
+        <li class="active"><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#website-navigation">Website Navigation</a></li>
+        <li><a href="#streaming-terms">Streaming Terms</a></li>
+        <li><a href="#beginner-resources">Beginner Resources</a></li>
+      `;
+  break;
+    // Add more sections as needed
+    default:
+      quickLinks.innerHTML = `
+        <li class="active"><a href="#${sectionId}">${sectionId.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}</a></li>
+      `;
+  }
+}
+
+/**
+ * Set up quick links in the right panel
+ */
+function setupQuickLinks() {
+  const quickLinks = document.getElementById('page-sections');
+  
+  if (!quickLinks) return;
+  
+  // Add click event listeners to quick links
+  quickLinks.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
+      e.preventDefault();
+      
+      // Remove active class from all links
+      document.querySelectorAll('#page-sections li').forEach(li => {
+        li.classList.remove('active');
+      });
+      
+      // Add active class to clicked link's parent
+      e.target.parentElement.classList.add('active');
+      
+      // Scroll to the target section
+      const targetId = e.target.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+}
+
+/**
+ * Add sparkle effects to warning boxes
+ */
+function addSparkleEffects() {
+  const warningBoxes = document.querySelectorAll('.warning-box');
+  
+  warningBoxes.forEach(box => {
+    // Add multiple sparkles
+    for (let i = 0; i < 5; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.className = 'sparkle';
+      
+      // Random position within the box
+      const top = Math.random() * 100;
+      const left = Math.random() * 100;
+      sparkle.style.top = `${top}%`;
+      sparkle.style.left = `${left}%`;
+      
+      // Random animation delay
+      const delay = Math.random() * 3;
+      sparkle.style.animation = `sparkle 2s infinite ${delay}s`;
+      
+      // Add to the box
+      box.appendChild(sparkle);
+    }
+  });
+}
+
+/**
+ * Set up smooth scrolling for anchor links
+ */
+function setupSmoothScrolling() {
+  // Select all links in the right sidebar that begin with '#'
+  document.querySelectorAll('.info-panel a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Get the target section ID from the href attribute
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        // Scroll to the target section smoothly
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        
+        // Update active state in the sidebar
+        document.querySelectorAll('.info-panel .quick-links li').forEach(li => {
+          li.classList.remove('active');
+        });
+        this.closest('li').classList.add('active');
+      }
+    });
+  });
+}
+
+/**
  * Add "Back to Top" button
  */
 function addBackToTopButton() {
-  // Create the button element
+  // Create button element
   const button = document.createElement('button');
   button.innerHTML = '<i class="fas fa-arrow-up"></i>';
   button.className = 'back-to-top';
@@ -86,152 +302,3 @@ function addBackToTopButton() {
     });
   });
 }
-
-/**
- * Add animation to elements when they scroll into view
- */
-function addScrollAnimation() {
-  // Check if Intersection Observer is supported
-  if ('IntersectionObserver' in window) {
-    // Elements to animate
-    const elements = document.querySelectorAll('.card, .section-header, .form-group, .info-section');
-    
-    // Create options for the observer
-    const options = {
-      root: null, // Use viewport as root
-      rootMargin: '0px',
-      threshold: 0.1 // 10% of the element is visible
-    };
-    
-    // Callback function
-    const callback = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Add the animation class
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = 'translateY(0)';
-          
-          // Stop observing after animation
-          observer.unobserve(entry.target);
-        }
-      });
-    };
-    
-    // Create the observer
-    const observer = new IntersectionObserver(callback, options);
-    
-    // Prepare and observe each element
-    elements.forEach(element => {
-      // Set initial styles
-      element.style.opacity = 0;
-      element.style.transform = 'translateY(30px)';
-      element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      
-      // Observe the element
-      observer.observe(element);
-    });
-  }
-}
-
-/**
- * Initialize page enhancements
- */
-function initializePageEnhancements() {
-  // Add sparkle to elements with .sparkle-effect class
-  const sparkleElements = document.querySelectorAll('.sparkle-effect');
-  
-  sparkleElements.forEach(element => {
-    element.style.position = 'relative';
-    element.style.overflow = 'hidden';
-    
-    // Add multiple sparkles
-    for (let i = 0; i < 5; i++) {
-      const sparkle = document.createElement('div');
-      sparkle.className = 'sparkle';
-      
-      // Style the sparkle
-      sparkle.style.position = 'absolute';
-      sparkle.style.width = '4px';
-      sparkle.style.height = '4px';
-      sparkle.style.backgroundColor = '#bb86fc';
-      sparkle.style.borderRadius = '50%';
-      
-      // Random position
-      const top = Math.random() * 100;
-      const left = Math.random() * 100;
-      sparkle.style.top = `${top}%`;
-      sparkle.style.left = `${left}%`;
-      
-      // Random animation delay
-      const delay = Math.random() * 3;
-      sparkle.style.animation = `sparkle 2s infinite ${delay}s`;
-      
-      // Add to the element
-      element.appendChild(sparkle);
-    }
-  });
-  
-  // Add sparkle animation to stylesheet
-  if (!document.querySelector('#sparkle-animation')) {
-    const style = document.createElement('style');
-    style.id = 'sparkle-animation';
-    style.textContent = `
-      @keyframes sparkle {
-        0% { transform: scale(1); opacity: 0; }
-        50% { transform: scale(2); opacity: 1; }
-        100% { transform: scale(1); opacity: 0; }
-      }
-    `;
-    document.head.appendChild(style);
-  }
-  
-  // Add neon pulse animation if not already added
-  if (!document.querySelector('#neon-animation')) {
-    const style = document.createElement('style');
-    style.id = 'neon-animation';
-    style.textContent = `
-      @keyframes neon-pulse {
-        from {
-          text-shadow: 
-            0 0 5px #ff69b4,
-            0 0 10px #ff69b4, 
-            0 0 20px #ff69b4;
-        }
-        to {
-          text-shadow: 
-            0 0 5px #ff69b4,
-            0 0 10px #ff69b4, 
-            0 0 20px #ff69b4,
-            0 0 30px #ff69b4;
-        }
-      }
-      
-      h1 {
-        animation: neon-pulse 2s infinite alternate;
-      }
-    `;
-    document.head.appendChild(style);
-  }
-}
-
-/**
- * Initialize all features when the DOM is loaded
- */
-document.addEventListener('DOMContentLoaded', function() {
-  // Check login status
-  checkLoginStatus();
-  
-  // Add "Back to Top" button
-  addBackToTopButton();
-  
-  // Add scroll animations
-  addScrollAnimation();
-  
-  // Initialize page enhancements
-  initializePageEnhancements();
-  
-  // Add class to warning boxes for sparkle effect
-  document.querySelectorAll('.warning-box').forEach(box => {
-    box.classList.add('sparkle-effect');
-  });
-});
